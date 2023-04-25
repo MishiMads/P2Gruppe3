@@ -19,7 +19,7 @@
             android:exported="false" />
         <activity
             android:name=".MiniGame1"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".Catalog"
             android:exported="false" />
