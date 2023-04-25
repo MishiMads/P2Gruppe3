@@ -11,4 +11,6 @@ public class MiniGame2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mini_game2);
     }
+
+    
 }
