@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
+    tools:context=".MiniGame1"/>
+=======
     tools:context=".MiniGame1">
 
     <ImageView
@@ -22,3 +25,4 @@
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="153dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> main
