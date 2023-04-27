@@ -6,26 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".MiniGame1">
 
-
-
-
-
-
-
     <ImageView
         android:id="@+id/nose"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="186dp"
+        android:layout_height="202dp"
         app:srcCompat="@drawable/group_2"
-        tools:layout_editor_absoluteX="181dp"
-        tools:layout_editor_absoluteY="214dp" />
+        tools:layout_editor_absoluteX="490dp"
+        tools:layout_editor_absoluteY="84dp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Change image"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="153dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
