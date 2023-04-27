@@ -4,25 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
-    tools:context=".MiniGame1"/>
-=======
     tools:context=".MiniGame1">
+
+
+
+
+
+
 
     <ImageView
         android:id="@+id/nose"
-        android:layout_width="186dp"
-        android:layout_height="202dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:srcCompat="@drawable/group_2"
         tools:layout_editor_absoluteX="181dp"
         tools:layout_editor_absoluteY="214dp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="Change image"
         tools:layout_editor_absoluteX="81dp"
         tools:layout_editor_absoluteY="153dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
->>>>>>> main
+

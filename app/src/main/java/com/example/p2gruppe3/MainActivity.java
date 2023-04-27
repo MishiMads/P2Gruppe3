@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView Map;
     float xDown = 0, yDown = 0;
+    private float limitX = 10;
+    private float limitY = 10;
 
     @SuppressLint("MissingInflatedId")
     @Override
