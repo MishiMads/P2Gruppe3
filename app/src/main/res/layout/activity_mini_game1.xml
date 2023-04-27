@@ -11,8 +11,8 @@
         android:layout_width="186dp"
         android:layout_height="202dp"
         app:srcCompat="@drawable/group_2"
-        tools:layout_editor_absoluteX="490dp"
-        tools:layout_editor_absoluteY="84dp" />
+        tools:layout_editor_absoluteX="181dp"
+        tools:layout_editor_absoluteY="214dp" />
 
     <Button
         android:id="@+id/button"
