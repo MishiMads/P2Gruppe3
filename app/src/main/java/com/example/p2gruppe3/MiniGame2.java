@@ -50,7 +50,7 @@ public class MiniGame2 extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfMoldRemoved++;
                 v.setVisibility(View.INVISIBLE);
-                messageText.setText("You have removed " + numberOfMoldRemoved + "mold!");
+                messageText.setText("You have removed " + numberOfMoldRemoved + " mold!");
             }
         };
 
@@ -102,7 +102,7 @@ public class MiniGame2 extends AppCompatActivity {
                 {
                     //Victory screen! WOO!!!
                 }
-                else
+                else if (numberOfMoldRemoved < 4)
                 {
                     messageText.setText("You still need to remove " + (4-numberOfMoldRemoved) + " more mold!");
                 }
