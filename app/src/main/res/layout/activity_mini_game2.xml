@@ -10,84 +10,89 @@
         android:id="@+id/cheeseObject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="64dp"
+        android:contentDescription="Button to remove mold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/moldRemovedButton"
-        app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/group_1"
-        android:contentDescription="Button to remove mold"
-        />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/group_1" />
 
     <ImageButton
         android:id="@+id/moldButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.371"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
-        app:srcCompat="@drawable/mold"
         android:contentDescription="Button to remove mold"
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/cheeseObject"
+        app:layout_constraintEnd_toStartOf="@+id/moldButton2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cheeseObject"
+        app:layout_constraintTop_toTopOf="@+id/cheeseObject"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/mold" />
 
     <ImageButton
         android:id="@+id/moldButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.7"
-        app:srcCompat="@drawable/mold"
         android:contentDescription="Button to remove mold"
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/cheeseObject"
+        app:layout_constraintEnd_toEndOf="@+id/cheeseObject"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/cheeseObject"
+        app:layout_constraintVertical_bias="0.877"
+        app:srcCompat="@drawable/mold" />
 
     <ImageButton
         android:id="@+id/moldButton3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mold"
         android:contentDescription="Button to remove mold"
-        />
+        app:layout_constraintBottom_toBottomOf="@+id/cheeseObject"
+        app:layout_constraintEnd_toEndOf="@+id/cheeseObject"
+        app:layout_constraintHorizontal_bias="0.527"
+        app:layout_constraintStart_toStartOf="@+id/cheeseObject"
+        app:layout_constraintTop_toTopOf="@+id/cheeseObject"
+        app:layout_constraintVertical_bias="0.526"
+        app:srcCompat="@drawable/mold" />
 
     <ImageButton
         android:id="@+id/moldButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="#00FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.635"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.296"
-        app:srcCompat="@drawable/mold"
         android:contentDescription="Button to remove mold"
-        />
+        app:layout_constraintBottom_toTopOf="@+id/moldButton2"
+        app:layout_constraintEnd_toEndOf="@+id/cheeseObject"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cheeseObject"
+        app:layout_constraintTop_toTopOf="@+id/cheeseObject"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/mold" />
 
     <Button
         android:id="@+id/moldRemovedButton"
+        android:layout_width="160dp"
+        android:layout_height="39dp"
+        app:layout_constraintBottom_toTopOf="@+id/cheeseObject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Take a bite?" />
+
+    <TextView
+        android:id="@+id/messageText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="You have removed 0 mold!"
         app:layout_constraintBottom_toTopOf="@+id/cheeseObject"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.583"
-        tools:text="helloworld"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/moldRemovedButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,10 +12,22 @@ import android.widget.TextView;
 
 public class MiniGame2 extends AppCompatActivity {
 
+    //A private integer is declared and assigned with the numberOfMoldRemoved variable name.
     private int numberOfMoldRemoved;
 
+    //A private Button variable is declared with the variable name moldRemovedButton.
     private Button moldRemovedButton;
 
+    private ImageButton moldButton1;
+    private ImageButton moldButton2;
+    private ImageButton moldButton3;
+    private ImageButton moldButton4;
+
+    private TextView messageText;
+
+    //@Override means that the method is from the AppCompatActivity superclass and is overriden in
+    //the following code block. The onCreate() method takes a Bundle-type variable and assigns it
+    //to the variable name savedInstanceState.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -43,7 +55,7 @@ public class MiniGame2 extends AppCompatActivity {
             }
         };
 
-        //ImageButtons found using findViewById in the XML file.
+        //ImageButton objects are found using findViewById in the XML file.
         //The (ImageButton) is a typecast for the View object identified in the findViewByID()
         //Typecasting means converting one data type to another and in this case
         //The compiler is told that the View object is actually an ImageButton, otherwise
@@ -52,17 +64,52 @@ public class MiniGame2 extends AppCompatActivity {
         //setOnClickListener() method. When moldButtonX is clicked, the onClick() method inside of
         //the moldButtonOnClickListener is called.
 
-        ImageButton moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
+        moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
         moldButton1.setOnClickListener(moldButtonOnClickListener);
 
-        ImageButton moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
+        moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
         moldButton2.setOnClickListener(moldButtonOnClickListener);
 
-        ImageButton moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
+        moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
         moldButton3.setOnClickListener(moldButtonOnClickListener);
 
-        ImageButton moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
+        moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
         moldButton4.setOnClickListener(moldButtonOnClickListener);
+
+        //Uses findViewById() to find moldRemovedButton from the XML file and typecasts it from a
+        //View object to a Button object and assigns it to moldRemovedButton of type Button.
+        moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
+
+        //Uses findViewById() to find messageText from the XML file and typecasts it from a
+        //View object to a TextView object and assigns it to messageText of type TextView.
+        messageText = (TextView)findViewById(R.id.messageText);
+
+        //The line new View.OnClickListener() creates an anonymous class.
+            //An anonymous class is a class that is defined and used once and therefore does not
+            //need a name nor to be used elsewhere in the code.
+        //Its used to implement the setOnClickListener() method
+        //and override its onClick() method.
+        moldRemovedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //When the button is pressed, it checks if the user has removed 4 molds,
+                //which is kept track of by using the numberOfMoldRemoved integer variable.
+                //If numberOfMoldRemoved is equals 4, then it runs the block of code that
+                //tells the user they've won. If the variable isn't exactly 4, then the code
+                //will run the "lose" screen which tells the user they haven't removed all of the
+                //mold!
+                if (numberOfMoldRemoved == 4)
+                {
+                    //Victory screen! WOO!!!
+                }
+                else
+                {
+                    messageText.setText("All of the mold hasn't been removed yet! You need to remove " + numberOfMoldRemoved + " more mold!");
+                }
+            }
+        });
+
         }
     }
 
