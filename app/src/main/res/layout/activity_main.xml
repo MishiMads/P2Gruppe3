@@ -11,7 +11,34 @@
         android:layout_width="2048dp"
         android:layout_height="1360dp"
         app:srcCompat="@drawable/landscape_new_zealand_s_shape"
-        tools:layout_editor_absoluteX="-164dp"
-        tools:layout_editor_absoluteY="-332dp" />
+        tools:layout_editor_absoluteX="-711dp"
+        tools:layout_editor_absoluteY="-308dp" />
+
+    <Button
+        android:id="@+id/MG1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minigame 1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/MG2"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MG2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minigame 2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/MG3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minigame 3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/MG2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
