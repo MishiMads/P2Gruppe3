@@ -22,7 +22,6 @@ public class MiniGame2 extends AppCompatActivity {
     private ImageButton moldButton2;
     private ImageButton moldButton3;
     private ImageButton moldButton4;
-
     private TextView messageText;
 
     //@Override means that the method is from the AppCompatActivity superclass and is overriden in
@@ -51,7 +50,7 @@ public class MiniGame2 extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfMoldRemoved++;
                 v.setVisibility(View.INVISIBLE);
-                moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
+                messageText.setText("You have removed " + numberOfMoldRemoved + "mold!");
             }
         };
 
@@ -105,7 +104,7 @@ public class MiniGame2 extends AppCompatActivity {
                 }
                 else
                 {
-                    messageText.setText("All of the mold hasn't been removed yet! You need to remove " + numberOfMoldRemoved + " more mold!");
+                    messageText.setText("You still need to remove " + (4-numberOfMoldRemoved) + " more mold!");
                 }
             }
         });
