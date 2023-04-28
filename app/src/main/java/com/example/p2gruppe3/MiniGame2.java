@@ -15,18 +15,20 @@ public class MiniGame2 extends AppCompatActivity {
     private int numberOfMoldRemoved;
 
     //Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
-    Button moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
-
-    //Gets the moldButtonX id of an ImageButton in the XML layout file of the activity.
-    ImageButton moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
-    ImageButton moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
-    ImageButton moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
-    ImageButton moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
+    private Button moldRemovedButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mini_game2);
+
+        moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
+
+        //Gets the moldButtonX id of an ImageButton in the XML layout file of the activity.
+        ImageButton moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
+        ImageButton moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
+        ImageButton moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
+        ImageButton moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
 
         //Explanation of the methods using setOnClickListener below:
         //This method calls the setOnClickListener() method on the ImageButton object.
