@@ -1,25 +1,24 @@
 package com.example.p2gruppe3;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.MotionEvent;
-import android.view.SurfaceHolder;
-import android.view.SurfaceView;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageView Map;
-    float xDown = 0, yDown = 0;
+    private ImageButton Drag;
+
+    private float xDown = 0, yDown = 0;
+    private float xDelta = 0, yDelta = 0;
 
     private Button MG1;
 
@@ -37,9 +36,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Map = findViewById(R.id.MapImage);
+        Drag = findViewById(R.id.Pot);
+
+
         MG1 = findViewById(R.id.MG1);
         MG2 = findViewById(R.id.MG2);
         MG3 = findViewById(R.id.MG3);
+
+
 
 
 
@@ -52,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                     case MotionEvent.ACTION_DOWN:
                         xDown = motionEvent.getX();
                         yDown = motionEvent.getY();
+
                         break;
 
                     case MotionEvent.ACTION_MOVE:
@@ -62,12 +67,10 @@ public class MainActivity extends AppCompatActivity {
                         float distanceX = xMoved - xDown;
                         float distanceY = yMoved - yDown;
 
-                        Map.setX(Map.getX()+distanceX);
-                        Map.setY(Map.getY()+distanceY);
-
-
-
-
+                        Map.setX(Map.getX() + distanceX);
+                        Map.setY(Map.getY() + distanceY);
+                        Drag.setX(Map.getX() + distanceX + 50);
+                        Drag.setY(Map.getY() + distanceY + 50);
 
                         break;
                 }
