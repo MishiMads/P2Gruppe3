@@ -2,23 +2,106 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ConstrainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MiniGame1">
 
     <ImageView
-        android:id="@+id/nose"
-        android:layout_width="186dp"
-        android:layout_height="202dp"
-        app:srcCompat="@drawable/group_2"
-        tools:layout_editor_absoluteX="490dp"
-        tools:layout_editor_absoluteY="84dp" />
+        android:id="@+id/goodNose"
+        android:layout_width="127dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.241"
+        app:srcCompat="@drawable/good_nose" />
 
-    <Button
-        android:id="@+id/button"
+    <ImageButton
+        android:id="@+id/goodMilk"
+        android:layout_width="139dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="4dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/milk" />
+
+    <ImageButton
+        android:id="@+id/badMilk"
+        android:layout_width="139dp"
+        android:layout_height="197dp"
+        android:layout_marginStart="552dp"
+        android:backgroundTint="#FFFFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/milk" />
+
+    <ImageView
+        android:id="@+id/bad"
+        android:layout_width="69dp"
+        android:layout_height="85dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193"
+        app:srcCompat="@drawable/bad"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/Stank"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change image"
-        tools:layout_editor_absoluteX="81dp"
-        tools:layout_editor_absoluteY="153dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/badMilk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.975"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.398"
+        app:srcCompat="@drawable/stank" />
+
+    <ImageView
+        android:id="@+id/neutralMouth"
+        android:layout_width="161dp"
+        android:layout_height="39dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        app:srcCompat="@drawable/neutral_mouth"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/badMouth"
+        android:layout_width="164dp"
+        android:layout_height="66dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.689"
+        app:srcCompat="@drawable/bad_mouth"
+        tools:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/happyMouth"
+        android:layout_width="135dp"
+        android:layout_height="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.668"
+        app:srcCompat="@drawable/happy_mouth"
+        tools:visibility="visible" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
