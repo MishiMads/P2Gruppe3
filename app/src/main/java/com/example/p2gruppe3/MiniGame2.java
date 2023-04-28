@@ -68,38 +68,41 @@ public class MiniGame2 extends AppCompatActivity {
         moldButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                //Increments the numberOfMoldRemoved by 1 and then sets the visibility of the
-                //image button to false which removes its visibility on the screen.
-
-                numberOfMoldRemoved++;
-                setVisible(false);
+                onButtonClick();
             }
         });
 
         moldButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberOfMoldRemoved++;
-                setVisible(false);
+                onButtonClick();
             }
         });
 
         moldButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberOfMoldRemoved++;
-                setVisible(false);
+                onButtonClick();
             }
         });
 
         moldButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                numberOfMoldRemoved++;
-                setVisible(false);
+                onButtonClick();
             }
         });
+    }
 
+    private void onButtonClick() {
 
-    }}
+        //Increments the numberOfMoldRemoved by 1 and then sets the visibility of the
+        //image button to false which removes its visibility on the screen.
+        //Changes the text in moldButtonRemoved.
+
+        numberOfMoldRemoved++;
+        setVisible(false);
+        moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
+    }
+
+}
