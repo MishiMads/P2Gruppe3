@@ -26,7 +26,47 @@ public class MiniGame2 extends AppCompatActivity {
         //Sets the layout of this activity to be the activity_mini_game2.xml XML file.
         setContentView(R.layout.activity_mini_game2);
 
-        //Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
+        //Creates an OnClickListener object assigned to the variable moldButtonOnClickListener
+        //from the OnClickListener interface in the View class.
+            //An interface is a set of abstract methods, methods without implementation.
+        //This variable is then used to set the OnClickListener for the button.
+        //When the button is clicked, the code runs the OnClick() method.
+        //OnClick() runs a code block that increments the numberOfMoldRemoved by 1.
+        //Furthermore, it sets the View assigned to the v-variable to be INVISIBLE.
+        //Lastly, the text in moldRemovedButton is set to what is in the parentheses.
+        View.OnClickListener moldButtonOnClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                numberOfMoldRemoved++;
+                v.setVisibility(View.INVISIBLE);
+                moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
+            }
+        };
+
+        //ImageButtons found using findViewById in the XML file.
+        //The (ImageButton) is a typecast for the View object identified in the findViewByID()
+        //Typecasting means converting one data type to another and in this case
+        //The compiler is told that the View object is actually an ImageButton, otherwise
+        //findViewByID() would just return a View object.
+        //The moldButtonOnClickListener is then assigned to the moldButtonX using the
+        //setOnClickListener() method. When moldButtonX is clicked, the onClick() method inside of
+        //the moldButtonOnClickListener is called.
+
+        ImageButton moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
+        moldButton1.setOnClickListener(moldButtonOnClickListener);
+
+        ImageButton moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
+        moldButton2.setOnClickListener(moldButtonOnClickListener);
+
+        ImageButton moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
+        moldButton3.setOnClickListener(moldButtonOnClickListener);
+
+        ImageButton moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
+        moldButton4.setOnClickListener(moldButtonOnClickListener);
+        }
+    }
+
+        /*//Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
         moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
 
         //Gets the moldButtonX id of an ImageButton in the XML layout file of the activity.
@@ -105,5 +145,4 @@ public class MiniGame2 extends AppCompatActivity {
         numberOfMoldRemoved++;
         setVisible(false);
         moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
-    }
-}
+    }*/
