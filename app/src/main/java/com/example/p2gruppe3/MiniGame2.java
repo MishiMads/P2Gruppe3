@@ -14,7 +14,6 @@ public class MiniGame2 extends AppCompatActivity {
 
     private int numberOfMoldRemoved;
 
-    //Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
     private Button moldRemovedButton;
 
     @Override
@@ -22,6 +21,7 @@ public class MiniGame2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mini_game2);
 
+        //Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
         moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
 
         //Gets the moldButtonX id of an ImageButton in the XML layout file of the activity.
@@ -41,29 +41,24 @@ public class MiniGame2 extends AppCompatActivity {
         //the specific code block we want.
         //View v is its physical view/appearance on the screen's UI but we don't use it
         //to manipulate anything about the button
-
         moldRemovedButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //When the button is pressed, it checks if the user has removed 4 molds,
                 //which is kept track of by using the numberOfMoldRemoved integer variable.
                 //If numberOfMoldRemoved is equals 4, then it runs the block of code that
                 //tells the user they've won. If the variable isn't exactly 4, then the code
                 //will run the "lose" screen which tells the user they haven't removed all of the
                 //mold!
-
                 if (numberOfMoldRemoved == 4)
                 {
                     //Victory screen! WOO!!!
                 }
-
                 else
                 {
                     //Tell the user they haven't removed all of the mold and therefore they can't
                     //eat it yet.
                 }
-
             }
         });
 
@@ -73,21 +68,18 @@ public class MiniGame2 extends AppCompatActivity {
                 onButtonClick();
             }
         });
-
         moldButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onButtonClick();
             }
         });
-
         moldButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onButtonClick();
             }
         });
-
         moldButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,11 +89,9 @@ public class MiniGame2 extends AppCompatActivity {
     }
 
     private void onButtonClick() {
-
         //Increments the numberOfMoldRemoved by 1 and then sets the visibility of the
         //image button to false which removes its visibility on the screen.
         //Changes the text in moldButtonRemoved.
-
         numberOfMoldRemoved++;
         setVisible(false);
         moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
