@@ -12,20 +12,84 @@
         android:layout_width="2048dp"
         android:layout_height="1360dp"
         android:src="@drawable/landscape_new_zealand_s_shape"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        tools:layout_editor_absoluteX="-368dp"
+        tools:layout_editor_absoluteY="-362dp" />
 
     <ImageButton
         android:id="@+id/Pot"
-        android:layout_width="350dp"
-        android:layout_height="132dp"
-        android:src="@drawable/vertical_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:maxWidth="10px"
+        android:maxHeight="10px"
+        android:src="@drawable/potresize"
         app:layout_constraintBottom_toBottomOf="@id/MapImage"
         app:layout_constraintEnd_toEndOf="@id/MapImage"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="@id/MapImage"
-        app:layout_constraintTop_toTopOf="@id/MapImage" />
+        app:layout_constraintTop_toTopOf="@id/MapImage"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageButton
+        android:id="@+id/Pot2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:maxWidth="10px"
+        android:maxHeight="10px"
+        android:src="@drawable/potresize"
+        app:layout_constraintBottom_toBottomOf="@id/MapImage"
+        app:layout_constraintEnd_toEndOf="@id/MapImage"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@id/MapImage"
+        app:layout_constraintTop_toTopOf="@id/MapImage"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageButton
+        android:id="@+id/pot3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:maxWidth="10px"
+        android:maxHeight="10px"
+        android:src="@drawable/potresize"
+        app:layout_constraintBottom_toBottomOf="@id/MapImage"
+        app:layout_constraintEnd_toEndOf="@id/MapImage"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@id/MapImage"
+        app:layout_constraintTop_toTopOf="@id/MapImage"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageButton
+        android:id="@+id/pot4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:maxWidth="10px"
+        android:maxHeight="10px"
+        android:src="@drawable/potresize"
+        app:layout_constraintBottom_toBottomOf="@id/MapImage"
+        app:layout_constraintEnd_toEndOf="@id/MapImage"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@id/MapImage"
+        app:layout_constraintTop_toTopOf="@id/MapImage"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <ImageButton
+        android:id="@+id/pot5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/Transparent"
+        android:maxWidth="10px"
+        android:maxHeight="10px"
+        android:src="@drawable/potresize"
+        app:layout_constraintBottom_toBottomOf="@id/MapImage"
+        app:layout_constraintEnd_toEndOf="@id/MapImage"
+        app:layout_constraintHorizontal_bias="0.376"
+        app:layout_constraintStart_toStartOf="@id/MapImage"
+        app:layout_constraintTop_toTopOf="@id/MapImage"
+        app:layout_constraintVertical_bias="0.361" />
+
     <Button
         android:id="@+id/MG1"
         android:layout_width="wrap_content"
@@ -48,9 +112,19 @@
         android:id="@+id/MG3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="Minigame 3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/MG2" />
+
+    <Button
+        android:id="@+id/BGB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

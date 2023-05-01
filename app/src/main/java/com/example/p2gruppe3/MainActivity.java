@@ -1,21 +1,27 @@
 package com.example.p2gruppe3;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.style.BackgroundColorSpan;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+import com.google.type.Color;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView Map;
-    private ImageButton Drag;
+    private ImageButton Drag1;
+    private ImageButton Drag2;
+    private ImageButton Drag3;
+    private ImageButton Drag4;
+    private ImageButton Drag5;
 
     private float xDown = 0, yDown = 0;
     private float xDelta = 0, yDelta = 0;
@@ -25,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
     private Button MG2;
 
     private Button MG3;
+
+    private Button Change;
+
+
 
 
 
@@ -36,14 +46,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Map = findViewById(R.id.MapImage);
-        Drag = findViewById(R.id.Pot);
+        Drag1 = findViewById(R.id.Pot);
+        Drag2 = findViewById(R.id.Pot2);
+        Drag3 = findViewById(R.id.pot3);
+        Drag4 = findViewById(R.id.pot4);
+        Drag5 = findViewById(R.id.pot5);
 
 
         MG1 = findViewById(R.id.MG1);
         MG2 = findViewById(R.id.MG2);
         MG3 = findViewById(R.id.MG3);
 
-
+        Change = findViewById(R.id.BGB);
 
 
 
@@ -67,15 +81,39 @@ public class MainActivity extends AppCompatActivity {
                         float distanceX = xMoved - xDown;
                         float distanceY = yMoved - yDown;
 
-                        Map.setX(Map.getX() + distanceX);
-                        Map.setY(Map.getY() + distanceY);
-                        Drag.setX(Map.getX() + distanceX + 50);
-                        Drag.setY(Map.getY() + distanceY + 50);
+                        float Mapsx = Map.getX() + distanceX;
+                        float Mapsy = Map.getY() + distanceY;
 
+                        Map.setX(Mapsx);
+                        Map.setY(Mapsy);
+                        Drag1.setX(Mapsx + 50);
+                        Drag1.setY(Mapsy + 1300);
+                        Drag2.setX(Mapsx + 1500);
+                        Drag2.setY(Mapsy + 2500);
+                        Drag3.setX(Mapsx + 5000);
+                        Drag3.setY(Mapsy + 1600);
+                        Drag4.setX(Mapsx + 4490);
+                        Drag4.setY(Mapsy + 750);
+                        Drag5.setX(Mapsx + 3500);
+                        Drag5.setY(Mapsy + 1800);
                         break;
                 }
 
                 return true;
+            }
+        });
+
+        Change.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceAsColor")
+            @Override
+            public void onClick(View view) {
+                Drag1.setBackgroundColor(R.color.white);
+                Drag2.setBackgroundColor(R.color.white);
+                Drag3.setBackgroundColor(R.color.white);
+                Drag4.setBackgroundColor(R.color.white);
+                Drag5.setBackgroundColor(R.color.white);
+
+
             }
         });
         MG1.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +135,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent Minigame3= new Intent(view.getContext(), MiniGame3.class);
                 startActivity(Minigame3);
+            }
+        });
+        Drag1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Test = new Intent(view.getContext(), MiniGame1.class);
+                startActivity(Test);
             }
         });
     }
