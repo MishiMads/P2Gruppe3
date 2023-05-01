@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
 import android.text.style.BackgroundColorSpan;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -33,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
     private Button MG3;
 
     private Button Change;
+
+    public float PlantPoints;
 
 
 
@@ -116,6 +120,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -140,8 +147,47 @@ public class MainActivity extends AppCompatActivity {
         Drag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Test = new Intent(view.getContext(), MiniGame1.class);
-                startActivity(Test);
+                PlantPoints ++;
+                if (PlantPoints >= 5){
+                    Drag1.setImageResource(R.drawable.frame);
+                }
+            }
+        });
+
+        Drag2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlantPoints ++;
+                if (PlantPoints >= 7){
+                    Drag2.setImageResource(R.drawable.frame);
+                }
+            }
+        });
+        Drag3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlantPoints ++;
+                if (PlantPoints >= 10){
+                    Drag3.setImageResource(R.drawable.frame);
+                }
+            }
+        });
+        Drag4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlantPoints ++;
+                if (PlantPoints >= 20){
+                    Drag4.setImageResource(R.drawable.frame);
+                }
+            }
+        });
+        Drag5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PlantPoints ++;
+                if (PlantPoints >= 100){
+                    Drag5.setImageResource(R.drawable.frame);
+                }
             }
         });
     }
