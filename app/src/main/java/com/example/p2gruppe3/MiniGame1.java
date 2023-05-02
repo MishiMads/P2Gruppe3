@@ -86,7 +86,6 @@ private int nextBtn = 0;
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
                         bad.setVisibility(View.VISIBLE);
                         neutralMouth.setVisibility(View.INVISIBLE);
                         happyMouth.setVisibility(View.INVISIBLE);
@@ -104,7 +103,7 @@ private int nextBtn = 0;
                     new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-
+                            MainActivity.PlantPoints+=3;
                             bad.setVisibility(View.INVISIBLE);
                             badMouth.setVisibility(View.INVISIBLE);
                             neutralMouth.setVisibility(View.INVISIBLE);
@@ -112,6 +111,7 @@ private int nextBtn = 0;
                             nextButton.setVisibility(View.VISIBLE);
                             badMilkButton.setVisibility(View.INVISIBLE);
                             Stank.setVisibility(View.INVISIBLE);
+
                         }
                     }
             );
@@ -144,7 +144,7 @@ private int nextBtn = 0;
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        MainActivity.PlantPoints+=3;
                         bad.setVisibility(View.INVISIBLE);
                         neutralMouth.setVisibility(View.INVISIBLE);
                         happyMouth.setVisibility(View.VISIBLE);
@@ -184,7 +184,7 @@ private int nextBtn = 0;
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        MainActivity.PlantPoints+= 3;
                         bad.setVisibility(View.INVISIBLE);
                         neutralMouth.setVisibility(View.INVISIBLE);
                         happyMouth.setVisibility(View.VISIBLE);

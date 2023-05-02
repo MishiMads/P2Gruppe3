@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button Change;
 
-    public float PlantPoints;
+    public static int PlantPoints;
 
 
 
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
-                Drag1.setBackgroundColor(R.color.white);
+                Drag1.setBackgroundColor(R.color.black);
                 Drag2.setBackgroundColor(R.color.white);
                 Drag3.setBackgroundColor(R.color.white);
                 Drag4.setBackgroundColor(R.color.white);
