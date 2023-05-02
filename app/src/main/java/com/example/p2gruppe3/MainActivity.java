@@ -1,18 +1,23 @@
 package com.example.p2gruppe3;
 
+import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.os.Debug;
-import android.text.style.BackgroundColorSpan;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import android.widget.TextView;
+
+import java.util.Random;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -37,12 +42,14 @@ public class MainActivity extends AppCompatActivity {
 
     public static int PlantPoints;
 
+    public static TextView DisplayPoints;
 
 
 
 
 
-    @SuppressLint("MissingInflatedId")
+
+    @SuppressLint({"MissingInflatedId", "ResourceAsColor"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +69,13 @@ public class MainActivity extends AppCompatActivity {
 
         Change = findViewById(R.id.BGB);
 
+        DisplayPoints = findViewById(R.id.PlantPointsDisplay);
+        DisplayPoints.setTextColor(R.color.black);
 
+        Drawable Background = getResources().getDrawable(R.drawable.ellipse_26);
+
+        Random random = new Random();
+        int RanNumber = random.nextInt(3) +1;
 
         Map.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -99,6 +112,12 @@ public class MainActivity extends AppCompatActivity {
                         Drag4.setY(Mapsy + 750);
                         Drag5.setX(Mapsx + 3500);
                         Drag5.setY(Mapsy + 1800);
+
+                        DisplayPoints.setText("Your points: " + PlantPoints);
+
+
+
+
                         break;
                 }
 
@@ -110,11 +129,12 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("ResourceAsColor")
             @Override
             public void onClick(View view) {
-                Drag1.setBackgroundColor(R.color.black);
-                Drag2.setBackgroundColor(R.color.white);
-                Drag3.setBackgroundColor(R.color.white);
-                Drag4.setBackgroundColor(R.color.white);
-                Drag5.setBackgroundColor(R.color.white);
+                Drag1.setBackground(Background);
+                Drag2.setBackground(Background);
+                Drag3.setBackground(Background);
+                Drag4.setBackground(Background);
+                Drag5.setBackground(Background);
+
 
 
             }
@@ -146,9 +166,31 @@ public class MainActivity extends AppCompatActivity {
         Drag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantPoints ++;
+                DisplayPoints.setText("Your points: " + PlantPoints);
+                int RanNumber = random.nextInt(3) +1;
                 if (PlantPoints >= 5){
                     Drag1.setImageResource(R.drawable.frame);
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("Uh oh, not enough points");
+                    builder.setMessage("You can get more points from minigames. Go to minigame?");
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openRanMinigame(RanNumber);
+                        }
+                    });
+
+                    builder.show();
                 }
             }
         });
@@ -156,39 +198,149 @@ public class MainActivity extends AppCompatActivity {
         Drag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantPoints ++;
+                int RanNumber = random.nextInt(3) +1;
+                DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 7){
                     Drag2.setImageResource(R.drawable.frame);
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("You dont have enough points");
+                    builder.setMessage("You can get more points from minigames. Go to minigame?");
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openRanMinigame(RanNumber);
+                        }
+                    });
+
+                    builder.show();
                 }
             }
         });
         Drag3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantPoints ++;
+                int RanNumber = random.nextInt(3) +1;
+                DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 10){
                     Drag3.setImageResource(R.drawable.frame);
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("You dont have enough points");
+                    builder.setMessage("You can get more points from minigames. Go to minigame?");
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openRanMinigame(RanNumber);
+                        }
+                    });
+
+                    builder.show();
                 }
             }
         });
         Drag4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantPoints ++;
+                int RanNumber = random.nextInt(3) +1;
+                DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 20){
                     Drag4.setImageResource(R.drawable.frame);
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("You dont have enough points");
+                    builder.setMessage("You can get more points from minigames. Go to minigame?");
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openRanMinigame(RanNumber);
+                        }
+                    });
+
+                    builder.show();
                 }
             }
         });
         Drag5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                PlantPoints ++;
+                int RanNumber = random.nextInt(3) +1;
+                DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 100){
                     Drag5.setImageResource(R.drawable.frame);
+                }else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("You dont have enough points");
+                    builder.setMessage("You can get more points from minigames. Go to minigame?");
+
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            openRanMinigame(RanNumber);
+                        }
+                    });
+
+                    builder.show();
                 }
             }
         });
+
+
+
     }
+    public void openRanMinigame(int RanNumber){
+        Intent intent;
+        switch (RanNumber){
+            case 1:
+                intent = new Intent(this, MiniGame1.class);
+                break;
+            case 2:
+                intent = new Intent(this,MiniGame2.class);
+                break;
+            case 3:
+                intent = new Intent(this, MiniGame3.class);
+                break;
+            default:
+                return;
+        }
+        startActivity(intent);
+    }
+
+
 
 }
