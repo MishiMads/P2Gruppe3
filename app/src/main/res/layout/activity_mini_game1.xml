@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".MiniGame1">
 
+    <Button
+        android:id="@+id/Frontpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to front page"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.898"
+        tools:visibility="invisible" />
+
     <ImageButton
         android:id="@+id/Toast"
         android:layout_width="106dp"
@@ -123,6 +135,7 @@
         app:srcCompat="@drawable/badegg"
         tools:visibility="invisible" />
 
+
     <ImageButton
         android:id="@+id/badMeat"
         android:layout_width="171dp"
@@ -130,26 +143,11 @@
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintHorizontal_bias="0.028"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
+        app:layout_constraintVertical_bias="0.934"
         app:srcCompat="@drawable/badmeat"
-        tools:visibility="invisible" />
-
-
-    <ImageButton
-        android:id="@+id/goodMeat"
-        android:layout_width="171dp"
-        android:layout_height="166dp"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
-        app:srcCompat="@drawable/goodmeat"
         tools:visibility="invisible" />
 
     <ImageButton
@@ -179,6 +177,49 @@
         app:layout_constraintVertical_bias="0.947"
         app:srcCompat="@drawable/fluent_emoji_flat_glass_of_milk"
         tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/Trash2"
+        android:layout_width="124dp"
+        android:layout_height="119dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.962"
+        app:srcCompat="@drawable/flat_color_icons_full_trash"
+        tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/Trash3"
+        android:layout_width="124dp"
+        android:layout_height="119dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.047"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.962"
+        app:srcCompat="@drawable/flat_color_icons_full_trash"
+        tools:visibility="invisible" />
+
+    <ImageButton
+        android:id="@+id/fryingPan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.931"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933"
+        app:srcCompat="@drawable/fryingpan"
+        android:background="@null"
+        tools:visibility="invisible" />
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

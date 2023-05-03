@@ -4,18 +4,16 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
-import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 public class MiniGame1 extends AppCompatActivity {
 
@@ -25,24 +23,28 @@ public class MiniGame1 extends AppCompatActivity {
     private static ImageView badMouth;
     private static ImageView bad;
 
-    private static ImageButton goodMilkButton;
     private static ImageButton badEggButton;
     private static ImageButton goodEggButton;
     private static ImageButton badMeatButton;
-    private static ImageButton goodMeatButton;
+
 
     private ImageButton Trashcan;
 
+    private ImageButton Trashcan2;
+
+    private ImageButton Trashcan3;
+
     private ImageButton MilkGlass;
-
-
-    private int nextBtn = 0;
 
     private float xDown = 0, yDown = 0;
 
     private ImageView Nose;
 
     private ImageButton Bread;
+
+    private ImageButton FryPan;
+
+    private Button frontPage;
 
 
     @SuppressLint("MissingInflatedId")
@@ -76,15 +78,8 @@ public class MiniGame1 extends AppCompatActivity {
         badEggButton = (ImageButton) findViewById(R.id.badEgg);
         badEggButton.setVisibility(View.INVISIBLE);
 
-
-
-        goodMeatButton = (ImageButton) findViewById(R.id.goodMeat);
-        goodMeatButton.setVisibility(View.INVISIBLE);
-
-
         badMeatButton = (ImageButton) findViewById(R.id.badMeat);
         badMeatButton.setVisibility(View.INVISIBLE);
-
 
         Nose = (ImageView) findViewById(R.id.goodNose);
 
@@ -96,6 +91,18 @@ public class MiniGame1 extends AppCompatActivity {
 
         Bread = (ImageButton) findViewById(R.id.Toast);
         Bread.setVisibility(View.INVISIBLE);
+
+        Trashcan2 = (ImageButton) findViewById(R.id.Trash2);
+        Trashcan2.setVisibility(View.INVISIBLE);
+
+        Trashcan3 = (ImageButton) findViewById(R.id.Trash3);
+        Trashcan3.setVisibility(View.INVISIBLE);
+
+        FryPan = (ImageButton) findViewById(R.id.fryingPan);
+        FryPan.setVisibility(View.INVISIBLE);
+
+        frontPage = (Button) findViewById(R.id.Frontpage);
+        frontPage.setVisibility(View.INVISIBLE);
 
         goodMilk.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -150,6 +157,115 @@ public class MiniGame1 extends AppCompatActivity {
                 return false;
             }
         });
+
+        badMeatButton.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent motionevent) {
+                switch (motionevent.getActionMasked()) {
+                    case MotionEvent.ACTION_DOWN:
+                        yDown = motionevent.getY();
+                        xDown = motionevent.getX();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        float xMoved, yMoved;
+                        xMoved = motionevent.getX();
+                        yMoved = motionevent.getY();
+
+                        float distanceX, distanceY;
+                        distanceX = xMoved - xDown;
+                        distanceY = yMoved - yDown;
+
+                        badMeatButton.setX(badMeatButton.getX() + distanceX);
+                        badMeatButton.setY(badMeatButton.getY() + distanceY);
+
+                        MeatColDetect();
+
+                }
+                return false;
+            }
+        });
+    }
+
+    private boolean MeatCollision(){
+        Rect stillRect = new Rect();
+        Nose.getHitRect(stillRect);
+
+        Rect movingRect = new Rect();
+        badMeatButton.getHitRect(movingRect);
+
+        return movingRect.intersect(stillRect);
+    }
+
+    private boolean MeatColDetect(){
+        if (MeatCollision()){
+            BadNose();
+            Trashcan3.setVisibility(View.VISIBLE);
+            FryPan.setVisibility(View.VISIBLE);
+
+            frontPage.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OpenFront();
+                }
+            });
+
+            FryPan.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("Wrong");
+                    builder.setMessage("You shouldn´t eat meat if it is green!");
+
+                    builder.setNegativeButton("try again", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            OpenCatalog();
+                        }
+                    });
+
+                    builder.show();
+                }
+            });
+            Trashcan3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.PlantPoints += 3;
+                    frontPage.setVisibility(View.VISIBLE);
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("Congrats");
+                    builder.setMessage("You got all of the questions correct");
+
+                   builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to front page", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            OpenFront();
+                        }
+                    });
+
+                    builder.show();
+                }
+            });
+
+        } else{
+
+        }
+        return MeatCollision();
     }
 
     private boolean MilkCollision() {
@@ -172,7 +288,6 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 3;
-                    goodMilk.setVisibility(View.GONE);
                     Eggside();
                 }
             });
@@ -223,10 +338,45 @@ public class MiniGame1 extends AppCompatActivity {
     private boolean EggColDetect() {
         if (EggCollision()) {
             GoodNose();
-            Trashcan.setVisibility(View.VISIBLE);
+            Trashcan2.setVisibility(View.VISIBLE);
             Bread.setVisibility(View.VISIBLE);
+            Bread.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MainActivity.PlantPoints +=3;
+                    Meatside();
+                }
+            });
+
+            Trashcan2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
+
+                    builder.setCancelable(true);
+                    builder.setTitle("Wrong");
+                    builder.setMessage("You shouldn´t eat eggs if they smell weird or some other thing about eggs");
+
+                    builder.setNegativeButton("try again", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            OpenCatalog();
+                        }
+                    });
+
+                    builder.show();
+                }
+            });
         } else {
             NeutralNose();
+            Bread.setVisibility(View.INVISIBLE);
+            Trashcan2.setVisibility(View.INVISIBLE);
         }
         return EggCollision();
     }
@@ -260,8 +410,20 @@ public class MiniGame1 extends AppCompatActivity {
     public void Eggside() {
         MilkGlass.setVisibility(View.INVISIBLE);
         Trashcan.setVisibility(View.INVISIBLE);
-        goodMilk.setVisibility(View.INVISIBLE);
+        goodMilk.setVisibility(View.GONE);
         goodEggButton.setVisibility(View.VISIBLE);
+    }
+
+    public void Meatside(){
+        goodEggButton.setVisibility(View.GONE);
+        Trashcan2.setVisibility(View.INVISIBLE);
+        Bread.setVisibility(View.INVISIBLE);
+        badMeatButton.setVisibility(View.VISIBLE);
+    }
+
+    public void OpenFront(){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 
 
