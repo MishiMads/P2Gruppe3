@@ -7,16 +7,20 @@
     android:layout_height="match_parent"
     tools:context=".MiniGame1">
 
-    <ImageView
-        android:id="@+id/goodNose"
-        android:layout_width="127dp"
-        android:layout_height="150dp"
+    <ImageButton
+        android:id="@+id/Toast"
+        android:layout_width="106dp"
+        android:layout_height="116dp"
+        android:background="@null"
+        android:src="@drawable/toast"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.241"
-        app:srcCompat="@drawable/good_nose" />
+        app:layout_constraintVertical_bias="0.945"
+        tools:visibility="invisible" />
+
 
     <ImageButton
         android:id="@+id/goodMilk"
@@ -29,18 +33,16 @@
         app:srcCompat="@drawable/milk"
         tools:visibility="invisible" />
 
-    <ImageButton
-        android:id="@+id/badMilk"
-        android:layout_width="139dp"
-        android:layout_height="197dp"
-        android:layout_marginStart="552dp"
-        android:backgroundTint="#FFFFFFFF"
+    <ImageView
+        android:id="@+id/goodNose"
+        android:layout_width="127dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/milk"
-        tools:visibility="invisible" />
+        app:layout_constraintVertical_bias="0.103"
+        app:srcCompat="@drawable/good_nose" />
 
     <ImageView
         android:id="@+id/bad"
@@ -51,21 +53,8 @@
         app:layout_constraintHorizontal_bias="0.581"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.193"
+        app:layout_constraintVertical_bias="0.082"
         app:srcCompat="@drawable/bad"
-        tools:visibility="invisible" />
-
-    <ImageView
-        android:id="@+id/Stank"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/badMilk"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.975"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398"
-        app:srcCompat="@drawable/stank"
         tools:visibility="invisible" />
 
     <ImageView
@@ -77,7 +66,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.674"
+        app:layout_constraintVertical_bias="0.516"
         app:srcCompat="@drawable/neutral_mouth"
         tools:visibility="visible" />
 
@@ -90,7 +79,7 @@
         app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.689"
+        app:layout_constraintVertical_bias="0.536"
         app:srcCompat="@drawable/bad_mouth"
         tools:visibility="invisible" />
 
@@ -102,27 +91,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.668"
+        app:layout_constraintVertical_bias="0.526"
         app:srcCompat="@drawable/happy_mouth"
-        tools:visibility="invisible" />
-
-    <Button
-        android:id="@+id/nextButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.499"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
         tools:visibility="invisible" />
 
     <ImageButton
         android:id="@+id/goodEgg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="147dp"
+        android:layout_height="143dp"
         android:backgroundTint="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +134,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955"
-        app:srcCompat="@drawable/badmeat" />
+        app:srcCompat="@drawable/badmeat"
+        tools:visibility="invisible" />
+
 
     <ImageButton
         android:id="@+id/goodMeat"
@@ -171,19 +149,35 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.955"
-        app:srcCompat="@drawable/goodmeat" />
+        app:srcCompat="@drawable/goodmeat"
+        tools:visibility="invisible" />
 
-    <ImageView
-        android:id="@+id/Stank2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/badMilk"
+    <ImageButton
+        android:id="@+id/Trash"
+        android:layout_width="124dp"
+        android:layout_height="119dp"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.047"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513"
-        app:srcCompat="@drawable/stank"
+        app:layout_constraintVertical_bias="0.962"
+        app:srcCompat="@drawable/flat_color_icons_full_trash"
+        tools:visibility="invisible"/>
+
+    <ImageButton
+        android:id="@+id/GlassMilk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.947"
+        app:srcCompat="@drawable/fluent_emoji_flat_glass_of_milk"
         tools:visibility="invisible" />
 
 

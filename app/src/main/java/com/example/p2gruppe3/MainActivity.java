@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton Drag5;
 
     private float xDown = 0, yDown = 0;
-    private float xDelta = 0, yDelta = 0;
+
+
 
     private Button MG1;
 
