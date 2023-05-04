@@ -34,7 +34,6 @@ public class Catalog extends AppCompatActivity {
                 builder.setCancelable(true);
                 builder.setTitle("Avocado");
 
-                builder.setMessage("Did you know that you can make your own little plant out of an avocado seed?\nBut keep in mind you will not get a fresh new avocado out of it.\n\nThis is done in different steps:\n 1: Take out the avocado pit, put some toothpicks in the upper part and place it with the pit bottom down (the more flat part) in a glass of water filled until it covers half of the pit.\n2: Place the glass in sunny spot, and you should see roots reaching down within a few weeks.\n3: Change out the water regularly and soon you will have a little avocado plant.");
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -42,6 +41,7 @@ public class Catalog extends AppCompatActivity {
                     }
                 });
 
+                builder.setMessage("Did you know that you can make your own little plant out of an avocado seed?\nBut keep in mind you will not get a fresh new avocado out of it.\n\nThis is done in different steps:\n 1: Take out the avocado pit, put some toothpicks in the upper part and place it with the pit bottom down (the more flat part) in a glass of water filled until it covers half of the pit.\n2: Place the glass in sunny spot, and you should see roots reaching down within a few weeks.\n3: Change out the water regularly.\n4: When the sprout grows about six inches tall, cut it back to about three inches to encourage more root growth.\n5: When the stem grows out again, plant the pit in a pot, about ten inches, filled with potting soil. And after some time you will get a little avocado plant.");
                 builder.show();
             }
         }
@@ -54,8 +54,7 @@ public class Catalog extends AppCompatActivity {
 
                 builder.setCancelable(true);
                 builder.setTitle("Cheese");
-                builder.setMessage("Did you know that mold on some kinds of cheeses can be cut away and you will be able to eat the cheese safely afterward?\nHowever, this depends on the type of cheese you have.\n\nIf mold becomes visible on fresh cheese it is likely time to discard the cheese. Fresh cheeses are high in moisture, so mold can spread quickly and make the cheese unsafe to eat\nFor aged or hard cheeses mold can be cut off. Around one inch is a good rule of thumb for how much to cut away. Because that type of cheese is so dense and have less moisture, so mold can not penetrate as deeply into the cheese.");
-
+                builder.setMessage("Did you know that mold on some kinds of cheeses can be cut away and you will be able to eat the cheese safely afterward?\nHowever, this depends on the type of cheese you have.\n\nIf mold becomes visible on fresh cheese it is likely time to discard the cheese. Fresh cheeses are high in moisture and the damp environment means that the mold has likely pierced deep into the cheese\nFor both soft or hard cheeses mold can be cut off. Because that type of cheese is so dense and have less moisture, so mold can not pierce as deeply into the cheese.");
 
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
@@ -77,7 +76,7 @@ public class Catalog extends AppCompatActivity {
                 builder.setCancelable(true);
                 builder.setTitle("Milk");
                 builder.setMessage("Did you know that you can check if your milk is spoiled by smelling it?\n\nIf it smells sour, it means that the milk is sour and it is spoiled.\nThis sour smell is caused by lactic acid bacteria as they break down and afterwards ferment the milk. This indicates that it is time to throw out the milk.");
-
+s
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
