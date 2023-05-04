@@ -2,84 +2,198 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:foregroundTint="#FFF3F3"
+    android:padding="2dp"
     tools:context=".Catalog">
 
-    <ImageButton
-        android:id="@+id/Cheese"
+
+    <TextView
+        android:id="@+id/Catalog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
+        android:text="Catalog"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout2"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.046" />
+
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="915dp"
+        android:layout_height="338dp"
+        android:layout_marginTop="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114"
-        app:srcCompat="@drawable/smallcheese" />
+        app:layout_constraintVertical_bias="0.297">
 
-    <ImageButton
-        android:id="@+id/Milk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.879"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114"
-        app:srcCompat="@drawable/smallmilk"/>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6B000000"
+            android:padding="2dp"
+            android:paddingLeft="2dp">
 
-    <ImageButton
-        android:id="@+id/Avocado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118"
-        app:srcCompat="@drawable/smallavocado" />
+            <ImageButton
+                android:id="@+id/Avocado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/smallavocado" />
 
-    <Button
-        android:id="@+id/buttonAvocado"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Avocado"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+            <ImageButton
+                android:id="@+id/Cheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/buttonCheese"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cheese"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/smallcheese" />
 
-    <Button
-        android:id="@+id/buttonMilk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Milk"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.584" />
+            <ImageButton
+                android:id="@+id/Milk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@drawable/smallmilk" />
 
+            <ImageView
+                android:id="@+id/WhiteBagground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:padding="5dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+            <ImageView
+                android:id="@+id/whiteBagground8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:padding="2dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="0dp"
+            android:paddingStart="0dp"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp">
+
+            <Button
+                android:id="@+id/buttonAvocado"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:includeFontPadding="true"
+                android:insetLeft="5dp"
+                android:insetRight="5dp"
+                android:padding="2dp"
+                android:text="Avocado" />
+
+            <Button
+                android:id="@+id/buttonCheese"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="true"
+                android:insetLeft="5dp"
+                android:insetRight="5dp"
+                android:padding="2dp"
+                android:text="Cheese" />
+
+            <Button
+                android:id="@+id/buttonMilk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:insetLeft="5dp"
+                android:insetRight="5dp"
+                android:padding="2dp"
+                android:text="Milk" />
+
+            <Button
+                android:id="@+id/Button"
+                android:layout_width="229dp"
+                android:layout_height="wrap_content"
+                android:insetLeft="12dp"
+                android:insetRight="25dp"
+                android:padding="2dp"
+                android:text="Button" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="229dp"
+                android:layout_height="wrap_content"
+                android:insetLeft="-10dp"
+                android:insetRight="100dp"
+                android:padding="2dp"
+                android:text="Button" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#6B000000"
+            android:padding="2dp"
+            android:paddingStart="2dp">
+
+            <ImageView
+                android:id="@+id/whiteBagground3"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="-50dp"
+                android:layout_weight="50"
+                android:cropToPadding="false"
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+            <ImageView
+                android:id="@+id/whiteBagground4"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="-35dp"
+                android:cropToPadding="false"
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+            <ImageView
+                android:id="@+id/whiteBagground5"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="-40dp"
+                android:cropToPadding="false"
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+            <ImageView
+                android:id="@+id/whiteBagground6"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_weight="50"
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebagground" />
+
+            <ImageView
+                android:id="@+id/whiteBagground7"
+                android:layout_width="150dp"
+                android:layout_height="100dp"
+                android:layout_weight="50"
+                android:padding="1dp"
+                app:srcCompat="@drawable/whitebagground" />
+        </TableRow>
+
+    </TableLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
