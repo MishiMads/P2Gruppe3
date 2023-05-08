@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button MG3;
 
-    private Button Change;
+    private Button Catalog;
 
     public static int PlantPoints;
 
@@ -67,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
         MG1 = findViewById(R.id.MG1);
         MG2 = findViewById(R.id.MG2);
         MG3 = findViewById(R.id.MG3);
+
+        Catalog = findViewById(R.id.CatalogButton);
 
 
 
@@ -132,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-       
+
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -311,8 +313,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        Catalog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                OpenCatalog();
+            }
+        });
 
 
+
+    }
+
+    public void OpenCatalog(){
+        Intent intent = new Intent(this, com.example.p2gruppe3.Catalog.class);
+        startActivity(intent);
     }
     public void openRanMinigame(int RanNumber){
         Intent intent;
