@@ -1,119 +1,233 @@
 package com.example.p2gruppe3;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 public class MiniGame3 extends View {
 
-        private Bitmap avocadoBitmap;
-        private Bitmap toastBitmap;
-        private Bitmap trashBitmap;
-        private Rect labyrinthRect;
-        private Rect avocadoRect;
-        private Rect toastRect;
-        private Rect trashRect;
-        private int avocadoX;
-        private int avocadoY;
-        private boolean isExpired;
+    Bitmap avocado;
+    Bitmap toast;
+    Bitmap pot;
 
-        public MiniGame3(Context context) {
-            super(context);
-            init();
-        }
+    Bitmap scaledAvocado;
+    float avocadoX;
+    float avocadoY;
+    float scaledAvocadoX;
+    float scaledAvocadoY;
+    float toastX;
+    float toastY;
+    float potX;
+    float potY;
+    float cellSize;
 
-        public MiniGame3(Context context, AttributeSet attrs) {
-            super(context, attrs);
-            init();
-        }
+    int viewWidth;
+    int viewHeight;
 
-        private void init() {
-            // Load bitmaps for the avocado, toast, and trash can
-            avocadoBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.avocado);
-            toastBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.toast);
-            trashBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.pot);
+    int numRows;
+    int numCols;
+    int currentRow;
+    int currentCol;
+    int touchCol;
+    int touchRow;
+    float scaledWidth;
+    float scaledHeight;
 
-            // Set up rectangles for the labyrinth, avocado, toast, and trash can
-            labyrinthRect = new Rect(100, 100, 700, 700);
-            avocadoRect = new Rect(150, 150, 250, 250);
-            toastRect = new Rect(600, 150, 700, 250);
-            trashRect = new Rect(600, 600, 700, 700);
 
-            // Set the initial position of the avocado
-            avocadoX = avocadoRect.centerX();
-            avocadoY = avocadoRect.centerY();
 
-            // Set the initial expiration state of the avocado
-            isExpired = false;
-        }
+    private int[][] walls =
+            {
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                    {1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1},
+                    {1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1},
+                    {1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+                    {1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1},
+                    {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1},
+                    {1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1},
+                    {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+                    {1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
+                    {1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 
-        @Override
-        protected void onDraw(Canvas canvas) {
-            super.onDraw(canvas);
 
-            // Draw the labyrinth
-            Paint labyrinthPaint = new Paint();
-            labyrinthPaint.setColor(Color.BLACK);
-            labyrinthPaint.setStyle(Paint.Style.STROKE);
-            labyrinthPaint.setStrokeWidth(10);
-            canvas.drawRect(labyrinthRect, labyrinthPaint);
+            };
 
-            // Draw the avocado
-            canvas.drawBitmap(avocadoBitmap, avocadoX - avocadoBitmap.getWidth() / 2, avocadoY - avocadoBitmap.getHeight() / 2, null);
 
-            // Draw the toast and trash can
-            canvas.drawBitmap(toastBitmap, toastRect.left, toastRect.top, null);
-            canvas.drawBitmap(trashBitmap, trashRect.left, trashRect.top, null);
-        }
+    public MiniGame3(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        avocado = BitmapFactory.decodeResource(context.getResources(), R.drawable.avocado);
+        toast = BitmapFactory.decodeResource(context.getResources(), R.drawable.toast);
+        pot = BitmapFactory.decodeResource(context.getResources(), R.drawable.pot);
 
-        /*@Override
-        public boolean onTouchEvent(MotionEvent event) {
-            boolean handled = false;
-            int action = event.getActionMasked();
-            if (action == MotionEvent.ACTION_DOWN || action == MotionEvent.ACTION_MOVE) {
-                // Move the avocado to the touch position
-                avocadoX = (int) event.getX();
-                avocadoY = (int) event.getY();
-                invalidate();
-                handled = true;
-            } else if (action == MotionEvent.ACTION_UP) {
-                // Determine whether the avocado is on the toast or trash can
-                if (toastRect.contains(avocadoX, avocadoY)) {
-                    // Avocado is on the toast
-                    if (isExpired) {
-                        // Display a message that the player lost
-                        Toast.makeText(getContext(), "Sorry, the avocado is expired!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Display a message that the player won
-                        Toast.makeText(getContext(), "Congratulations, you made some delicious avocado toast!", Toast.LENGTH_SHORT).show();
-                    }
-                } else if (trashRect.contains(avocadoX, avocadoY)) {
-                    // Avocado is in the trash
-                    if (isExpired) {
-                        // Display a message that the player won
-                        Toast.makeText(getContext(), "Congratulations, you correctly identified the expired avocado!", Toast.LENGTH_SHORT).show();
-                    } else {
-                        // Display a message that the player lost
-                        Toast.makeText(getContext(), "Sorry, that avocado was not expired!", Toast.LENGTH_SHORT).show();
+    }
 
-                    }
+
+
+
+    @Override
+    protected void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+
+        // Get the dimensions of the view
+        viewWidth = getWidth();
+        viewHeight = getHeight();
+
+        // Calculate the number of rows and columns based on the view dimensions
+        numRows = walls.length;
+        numCols = walls[0].length;
+        cellSize = Math.min(viewWidth / (float) numCols, viewHeight / (float) numRows);
+        //avocadoX = cellSize * 2;
+        //avocadoY = cellSize * 4;
+        toastX = cellSize;
+        toastY = cellSize * 15;
+        potX = cellSize * 9;
+        potY = cellSize * 15;
+
+
+        // Draw the labyrinth
+        Paint wallPaint = new Paint();
+        wallPaint.setColor(Color.LTGRAY);
+        wallPaint.setStyle(Paint.Style.FILL);
+        wallPaint.setStrokeWidth(cellSize / 5);
+
+        Paint pathPaint = new Paint();
+        pathPaint.setColor(Color.WHITE);
+        pathPaint.setStyle(Paint.Style.FILL);
+
+        Paint redPaint = new Paint();
+        redPaint.setColor(Color.RED);
+        redPaint.setStyle(Paint.Style.FILL);
+
+
+        for (int row = 0; row < numRows; row++) {
+            for (int col = 0; col < numCols; col++) {
+                float left = col * cellSize;
+                float top = 2 * cellSize + row * cellSize;
+                float right = left + cellSize;
+                float bottom = top + cellSize;
+
+                if (walls[row][col] == 1) {
+                    canvas.drawRect(left, top, right, bottom, wallPaint);
+                } else {
+                    canvas.drawRect(left, top, right, bottom, pathPaint);
+                }
+                if (row==touchRow && col==touchCol)
+                {
+                    canvas.drawRect(left, top, right, bottom, redPaint);
                 }
             }
         }
+
+        scaledWidth = cellSize * 3 / 4; // 3/4 of cellSize
+        scaledHeight = cellSize * 3 / 4; // 3/4 of cellSize
+        scaledAvocado = Bitmap.createScaledBitmap(avocado, (int) scaledWidth, (int) scaledHeight, false);
+        scaledAvocadoX = avocadoX + (cellSize*2) - scaledAvocado.getWidth()/2;
+        scaledAvocadoY = avocadoY + (cellSize*4) - scaledAvocado.getHeight()/2;
+
+
+        //Rect avocadoPosition = new Rect((int) avocadoX-avocado.getWidth() / 2, (int) avocadoY-avocado.getWidth() / 2, (int) (avocadoX + cellSize/1.5), (int) (avocadoY + cellSize/1.5));
+        //canvas.drawBitmap(avocado, null, avocadoPosition, null);
+        //canvas.drawBitmap(avocado, avocadoX - avocado.getWidth() / 2, avocadoY - avocado.getHeight() / 2, null);
+        canvas.drawBitmap(scaledAvocado, scaledAvocadoX, scaledAvocadoY, null);
+
+        Rect toastPosition = new Rect((int) toastX, (int) toastY, (int) (toastX + cellSize), (int) (toastY + cellSize));
+        canvas.drawBitmap(toast, null, toastPosition, null);
+
+        Rect potPosition = new Rect((int) potX, (int) potY, (int) (potX + cellSize), (int) (potY + cellSize));
+        canvas.drawBitmap(pot, null, potPosition, null);
+
+        // Calculate the bounding boxes of the avocado, pot, and toast bitmaps
+        Rect avocadoRect = new Rect(
+                (int)scaledAvocadoX,
+                (int)scaledAvocadoY,
+                (int)(scaledAvocadoX + scaledWidth),
+                (int)(scaledAvocadoY + scaledHeight)
+        );
+
+
+        // Check if the avocado bitmap overlaps with the pot or toast bitmaps
+        if (avocadoRect.intersect(toastPosition)) {
+            // Show an alert dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage("The avocado was still edible! You can still plant the seed nonetheless.").setTitle("Congratulations");
+            builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Restart the game
+                    //resetGame();
+                }
+            });
+            builder.setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Quit the game
+                    ((Activity) getContext()).finish();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+        if (avocadoRect.intersect(potPosition)) {
+            // Show an alert dialog
+            AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+            builder.setMessage("The avocado was still edible. You could have eaten it before planting the seed.").setTitle("Too bad");
+            builder.setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Restart the game
+                    //resetGame();
+                }
+            });
+            builder.setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                    // Quit the game
+                    ((Activity) getContext()).finish();
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
-*/
+
+
+
+    public boolean onTouchEvent(MotionEvent event) {
+        if (event.getAction() == MotionEvent.ACTION_MOVE) {
+            float touchX = event.getX();
+            float touchY = event.getY();
+            int viewPosition[] = new int[2];
+            getLocationOnScreen(viewPosition);
+            touchCol = (int) ((touchX-viewPosition[0])/cellSize);
+            touchRow = (int) ((touchY-viewPosition[1])/cellSize);
+
+
+            // Check if the touch event is within a certain distance from the avocado
+            if (Math.abs(touchX - scaledAvocadoX) < cellSize/0.9 && Math.abs(touchY - scaledAvocadoY) < cellSize/0.9 && walls[touchRow][touchCol] == 0) {
+                // Update the avocado position
+                avocadoX = touchX - (cellSize*2);
+                avocadoY = touchY - (cellSize*4);
+
+
+                //walls[touchRow][touchCol] == 0
+
+
+                //Sammenlign og se om position svarer til [0] i array ellers ikke flytte
+
+                // Invalidate the view to redraw the avocado
+                invalidate();
+            }
+        }
+        return true;
+    }
 }
-
-
 
