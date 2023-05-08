@@ -1,7 +1,9 @@
 package com.example.p2gruppe3;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -31,6 +33,8 @@ public class MiniGame2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+
+
         //Uses the onCreate() method of the superclass on the
         //bundle-type variable savedInstanceState to create the visual elements.
         super.onCreate(savedInstanceState);
@@ -38,6 +42,19 @@ public class MiniGame2 extends AppCompatActivity {
         //Sets the layout of this activity to be the activity_mini_game2.xml XML file.
         setContentView(R.layout.activity_mini_game2);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame2.this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Minigame 2");
+        builder.setMessage("Remove the mold from the cheese by clicking on the mold spots.");
+
+        builder.setNegativeButton("Start Minigame", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+        builder.show();
         //Creates an OnClickListener object assigned to the variable moldButtonOnClickListener
         //from the OnClickListener interface in the View class.
             //An interface is a set of abstract methods, methods without implementation.

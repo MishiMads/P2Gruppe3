@@ -22,28 +22,19 @@ public class MiniGame1 extends AppCompatActivity {
     private static ImageView happyMouth;
     private static ImageView badMouth;
     private static ImageView bad;
-
     private static ImageButton badEggButton;
     private static ImageButton goodEggButton;
     private static ImageButton badMeatButton;
-
-
     private ImageButton Trashcan;
-
     private ImageButton Trashcan2;
-
     private ImageButton Trashcan3;
-
     private ImageButton MilkGlass;
-
-    private float xDown = 0, yDown = 0;
-
-    private ImageView Nose;
-
     private ImageButton Bread;
-
     private ImageButton FryPan;
 
+
+    private float xDown = 0, yDown = 0;
+    private ImageView Nose;
     private Button frontPage;
 
 
@@ -53,13 +44,9 @@ public class MiniGame1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mini_game1);
 
-        goodMilk = (ImageView) findViewById(R.id.goodMilk);
-        //goodMilkButtonClick();
-
 
         bad = (ImageView) findViewById(R.id.bad);
         bad.setVisibility(View.INVISIBLE);
-
 
         neutralMouth = (ImageView) findViewById(R.id.neutralMouth);
         neutralMouth.setVisibility(View.VISIBLE);
@@ -70,6 +57,8 @@ public class MiniGame1 extends AppCompatActivity {
         happyMouth = (ImageView) findViewById(R.id.happyMouth);
         happyMouth.setVisibility(View.INVISIBLE);
 
+
+        goodMilk = (ImageView) findViewById(R.id.goodMilk);
 
         goodEggButton = (ImageButton) findViewById(R.id.goodEgg);
         goodEggButton.setVisibility(View.INVISIBLE);
@@ -103,6 +92,22 @@ public class MiniGame1 extends AppCompatActivity {
 
         frontPage = (Button) findViewById(R.id.Frontpage);
         frontPage.setVisibility(View.INVISIBLE);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Minigame 1");
+        builder.setMessage("Drag the food item to the Nose, and click on the corresponding items in the lower left or right, based on the Noses reaction.");
+
+        builder.setNegativeButton("Start Minigame", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+            }
+        });
+
+
+        builder.show();
 
         goodMilk.setOnTouchListener(new View.OnTouchListener() {
             @Override

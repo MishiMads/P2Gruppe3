@@ -120,8 +120,8 @@
 
     <TextView
         android:id="@+id/PlantPointsDisplay"
-        android:layout_width="176dp"
-        android:layout_height="48dp"
+        android:layout_width="143dp"
+        android:layout_height="32dp"
         android:layout_marginTop="20dp"
         android:background="@color/white"
         android:text="TextView"

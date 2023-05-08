@@ -10,8 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d75ae1-4ddc-4414-ad58-4ce2a4bd0c95" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/Minigame3starterActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_minigame3starter.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_catalog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_catalog.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +45,13 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
@@ -57,11 +73,20 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;android-custom-viewC:/Users/marku/OneDrive/Dokumenter/GIIThuub/P2Gruppe3/app/src/main/java/com/example/p2gruppe3/MiniGame3.java_SELECTED&quot;: &quot;MiniGame3&quot;,
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/marku/OneDrive/Dokumenter/GIIThuub/P2Gruppe3/app&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;AndroidSdkUpdater&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="android.template.-1103842415">
+      <recent name="com.example.p2gruppe3" />
+    </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="com.example.p2gruppe3" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="P2Gruppe3.app" type="AndroidRunConfigurationType" factoryName="Android App">
       <module name="P2Gruppe3.app.main" />

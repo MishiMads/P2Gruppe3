@@ -152,8 +152,8 @@ public class MainActivity extends AppCompatActivity {
         MG3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Minigame3= new Intent(view.getContext(), MiniGame3.class);
-                startActivity(Minigame3);
+                Intent intent = new Intent(view.getContext(), Minigame3starterActivity.class);
+                startActivity(intent);
             }
         });
         Drag1.setOnClickListener(new View.OnClickListener() {
@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 int RanNumber = random.nextInt(3) +1;
                 if (PlantPoints >= 5){
+                    PlantPoints -=5;
                     Drag1.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -194,6 +195,7 @@ public class MainActivity extends AppCompatActivity {
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 7){
+                    PlantPoints -=7;
                     Drag2.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -225,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 10){
+                    PlantPoints -=10;
                     Drag3.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -256,6 +259,7 @@ public class MainActivity extends AppCompatActivity {
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 20){
+                    PlantPoints -=20;
                     Drag4.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -287,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 100){
+                    PlantPoints -=100;
                     Drag5.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);

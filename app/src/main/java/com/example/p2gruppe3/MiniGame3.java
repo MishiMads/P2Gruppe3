@@ -16,9 +16,9 @@ import android.view.View;
 
 public class MiniGame3 extends View {
 
-    Bitmap avocado;
-    Bitmap toast;
-    Bitmap pot;
+    private Bitmap avocado;
+    private Bitmap toast;
+    private Bitmap pot;
 
     Bitmap scaledAvocado;
     float avocadoX;
@@ -64,14 +64,19 @@ public class MiniGame3 extends View {
 
 
             };
-
-
+    public MiniGame3(Context context) {
+        super(context);
+        Start();
+    }
     public MiniGame3(Context context, AttributeSet attrs) {
         super(context, attrs);
-        avocado = BitmapFactory.decodeResource(context.getResources(), R.drawable.avocado);
-        toast = BitmapFactory.decodeResource(context.getResources(), R.drawable.toast);
-        pot = BitmapFactory.decodeResource(context.getResources(), R.drawable.pot);
+        Start();
+    }
 
+    public void Start(){
+        avocado = BitmapFactory.decodeResource(this.getResources(), R.drawable.avocado);
+        toast = BitmapFactory.decodeResource(this.getResources(), R.drawable.toast);
+        pot = BitmapFactory.decodeResource(this.getResources(), R.drawable.pot);
     }
 
 
