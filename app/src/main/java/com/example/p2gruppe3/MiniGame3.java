@@ -68,8 +68,16 @@ public class MiniGame3 extends View {
         super(context);
         Start();
     }
+<<<<<<< Updated upstream
 
 
+=======
+
+
+
+
+
+>>>>>>> Stashed changes
     public MiniGame3(Context context, AttributeSet attrs) {
         super(context, attrs);
         Start();

@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MiniGame1 extends AppCompatActivity {
 
@@ -37,12 +38,15 @@ public class MiniGame1 extends AppCompatActivity {
     private ImageView Nose;
     private Button frontPage;
 
+    private TextView Pointsdisplay;
+
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mini_game1);
+
 
 
         bad = (ImageView) findViewById(R.id.bad);
@@ -92,6 +96,11 @@ public class MiniGame1 extends AppCompatActivity {
 
         frontPage = (Button) findViewById(R.id.Frontpage);
         frontPage.setVisibility(View.INVISIBLE);
+
+        Pointsdisplay = findViewById(R.id.Points);
+
+        Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
+
 
         AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
@@ -243,6 +252,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 3;
+                    Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     frontPage.setVisibility(View.VISIBLE);
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
@@ -293,6 +303,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 3;
+                    Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     Eggside();
                 }
             });
@@ -349,6 +360,8 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints +=3;
+                    Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
+
                     Meatside();
                 }
             });

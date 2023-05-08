@@ -220,6 +220,18 @@
         android:background="@null"
         tools:visibility="invisible" />
 
+    <TextView
+        android:id="@+id/Points"
+        android:layout_width="143dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:text="TextView"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

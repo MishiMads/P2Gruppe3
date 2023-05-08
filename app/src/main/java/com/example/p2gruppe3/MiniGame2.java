@@ -3,6 +3,7 @@ package com.example.p2gruppe3;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MiniGame2 extends AppCompatActivity {
 
@@ -27,9 +30,12 @@ public class MiniGame2 extends AppCompatActivity {
     private ImageButton moldButton4;
     private TextView messageText;
 
+    private TextView Pointsdisplay;
+
     //@Override means that the method is from the AppCompatActivity superclass and is overriden in
     //the following code block. The onCreate() method takes a Bundle-type variable and assigns it
     //to the variable name savedInstanceState.
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -67,8 +73,11 @@ public class MiniGame2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numberOfMoldRemoved++;
+                MainActivity.PlantPoints++;
                 v.setVisibility(View.INVISIBLE);
                 messageText.setText("You have removed " + numberOfMoldRemoved + " mold!");
+                Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
+
             }
         };
 
@@ -80,6 +89,7 @@ public class MiniGame2 extends AppCompatActivity {
         //The moldButtonOnClickListener is then assigned to the moldButtonX using the
         //setOnClickListener() method. When moldButtonX is clicked, the onClick() method inside of
         //the moldButtonOnClickListener is called.
+        Pointsdisplay = findViewById(R.id.Points);
 
         moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
         moldButton1.setOnClickListener(moldButtonOnClickListener);
@@ -118,7 +128,6 @@ public class MiniGame2 extends AppCompatActivity {
                 //mold!
                 if (numberOfMoldRemoved == 4)
                 {
-                    MainActivity.PlantPoints += 4;
                     Return();
                 }
                 else if (numberOfMoldRemoved < 4)
@@ -127,7 +136,6 @@ public class MiniGame2 extends AppCompatActivity {
                 }
             }
         });
-
         }
 
         public void Return(){
@@ -135,84 +143,3 @@ public class MiniGame2 extends AppCompatActivity {
             startActivity(intent);
         }
     }
-
-        /*//Gets the moldRemovedButton id of an Button in the XML layout file of the activity.
-        moldRemovedButton = (Button)findViewById(R.id.moldRemovedButton);
-
-        //Gets the moldButtonX id of an ImageButton in the XML layout file of the activity.
-        ImageButton moldButton1 = (ImageButton)findViewById(R.id.moldButton1);
-        ImageButton moldButton2 = (ImageButton)findViewById(R.id.moldButton2);
-        ImageButton moldButton3 = (ImageButton)findViewById(R.id.moldButton3);
-        ImageButton moldButton4 = (ImageButton)findViewById(R.id.moldButton4);
-
-        //Explanation of the methods using setOnClickListener below:
-        //This method calls the setOnClickListener() method on the ImageButton object.
-        //new View.OnClickListener() creates an anonymous class.
-        //An anonymous class is a class that is defined and used once and therefore does not
-        //need a name nor to be used elsewhere in the code.
-        //Its used to implement the setOnClickListener() method
-        //and override its onClick() method.
-        //View.OnClickListener() overrides its onClick() method to run
-        //the specific code block we want.
-        //View v is its physical view/appearance on the screen's UI but we don't use it
-        //to manipulate anything about the button
-        moldRemovedButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                //When the button is pressed, it checks if the user has removed 4 molds,
-                //which is kept track of by using the numberOfMoldRemoved integer variable.
-                //If numberOfMoldRemoved is equals 4, then it runs the block of code that
-                //tells the user they've won. If the variable isn't exactly 4, then the code
-                //will run the "lose" screen which tells the user they haven't removed all of the
-                //mold!
-                if (numberOfMoldRemoved == 4)
-                {
-                    //Victory screen! WOO!!!
-                }
-                else
-                {
-                    //Tell the user they haven't removed all of the mold and therefore they can't
-                    //eat it yet.
-                }
-            }
-        });
-
-        //Instead of an if/else-statement, the following methods run another method
-        //called onButtonClick which increments the numberOfMoldRemoved by 1 and
-        //then sets the visibility of the image button to false which removes
-        //its visibility on the screen. Also changes the text in moldButtonRemoved.
-        moldButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick();
-            }
-        });
-
-        moldButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick();
-            }
-        });
-
-        moldButton3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick();
-            }
-        });
-
-        moldButton4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick();
-            }
-        });
-    }
-
-    private void onButtonClick() {
-        numberOfMoldRemoved++;
-        setVisible(false);
-        moldRemovedButton.setText("You have removed " + numberOfMoldRemoved + "mold!");
-    }*/
