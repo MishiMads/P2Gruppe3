@@ -47,20 +47,19 @@ public class MiniGame3 extends View {
 
     private int[][] walls =
             {
-                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-                    {1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1},
-                    {1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1},
-                    {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1},
-                    {1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1},
-                    {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
-                    {1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1},
-                    {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1},
-                    {1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-                    {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1},
-                    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
-                    {1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
-                    {1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1},
-                    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+                    {1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
+                    {1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0},
+                    {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 0, 1, 0, 1, 1, 0, 0, 0},
+                    {1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0},
+                    {1, 0, 1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
+                    {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0},
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0},
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
 
 
             };
@@ -99,10 +98,10 @@ public class MiniGame3 extends View {
         cellSize = Math.min(viewWidth / (float) numCols, viewHeight / (float) numRows);
         //avocadoX = cellSize * 2;
         //avocadoY = cellSize * 4;
-        toastX = cellSize;
-        toastY = cellSize * 15;
-        potX = cellSize * 9;
-        potY = cellSize * 15;
+        toastX = cellSize * 19;
+        toastY = cellSize * 4;
+        potX = cellSize * 19;
+        potY = cellSize * 9;
 
 
         // Draw the labyrinth
@@ -220,7 +219,7 @@ public class MiniGame3 extends View {
 
 
             // Check if the touch event is within a certain distance from the avocado
-            if (Math.abs(touchX - scaledAvocadoX) < cellSize/0.9 && Math.abs(touchY - scaledAvocadoY) < cellSize/0.9 && walls[touchRow][touchCol] == 0) {
+            if (Math.abs(touchX - scaledAvocadoX) < cellSize/0.8 && Math.abs(touchY - scaledAvocadoY) < cellSize/0.8 && walls[touchRow][touchCol] == 0) {
                 // Update the avocado position
                 avocadoX = touchX - (cellSize*2);
                 avocadoY = touchY - (cellSize*4);
