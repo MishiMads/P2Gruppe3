@@ -2,6 +2,7 @@ package com.example.p2gruppe3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -100,7 +101,8 @@ public class MiniGame2 extends AppCompatActivity {
                 //mold!
                 if (numberOfMoldRemoved == 4)
                 {
-                    //Victory screen! WOO!!!
+                    MainActivity.PlantPoints += 4;
+                    Return();
                 }
                 else if (numberOfMoldRemoved < 4)
                 {
@@ -109,6 +111,11 @@ public class MiniGame2 extends AppCompatActivity {
             }
         });
 
+        }
+
+        public void Return(){
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
         }
     }
 

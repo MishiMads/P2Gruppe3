@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         MG2 = findViewById(R.id.MG2);
         MG3 = findViewById(R.id.MG3);
 
-        Change = findViewById(R.id.BGB);
+
 
         DisplayPoints = findViewById(R.id.PlantPointsDisplay);
         DisplayPoints.setTextColor(R.color.black);
@@ -77,6 +77,12 @@ public class MainActivity extends AppCompatActivity {
 
         Random random = new Random();
         int RanNumber = random.nextInt(3) +1;
+
+        Drag1.setBackground(Background);
+        Drag2.setBackground(Background);
+        Drag3.setBackground(Background);
+        Drag4.setBackground(Background);
+        Drag5.setBackground(Background);
 
         Map.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -126,23 +132,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Change.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("ResourceAsColor")
-            @Override
-            public void onClick(View view) {
-                Drag1.setBackground(Background);
-                Drag2.setBackground(Background);
-                Drag3.setBackground(Background);
-                Drag4.setBackground(Background);
-                Drag5.setBackground(Background);
-
-
-
-            }
-        });
-
-
-
+       
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

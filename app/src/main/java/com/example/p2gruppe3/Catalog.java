@@ -76,7 +76,7 @@ public class Catalog extends AppCompatActivity {
                 builder.setCancelable(true);
                 builder.setTitle("Milk");
                 builder.setMessage("Did you know that you can check if your milk is spoiled by smelling it?\n\nIf it smells sour, it means that the milk is sour and it is spoiled.\nThis sour smell is caused by lactic acid bacteria as they break down and afterwards ferment the milk. This indicates that it is time to throw out the milk.");
-s
+
                 builder.setNegativeButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
