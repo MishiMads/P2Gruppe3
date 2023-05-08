@@ -48,6 +48,8 @@ public class MiniGame3 extends View {
     private int[][] walls =
             {
 
+                    //horizontal maze som sucks
+                    /*
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
                     {1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0},
                     {1, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0},
@@ -60,6 +62,23 @@ public class MiniGame3 extends View {
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0},
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
                     {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0},
+                    */
+
+
+                    {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+                    {1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1},
+                    {1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1},
+                    {1, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+                    {1, 0, 1, 1, 1, 0, 1, 0, 0, 0, 1},
+                    {1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1},
+                    {1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1},
+                    {1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 1},
+                    {1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1},
+                    {1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1},
+                    {1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1},
+                    {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
 
 
             };
@@ -103,10 +122,10 @@ public class MiniGame3 extends View {
         cellSize = Math.min(viewWidth / (float) numCols, viewHeight / (float) numRows);
         //avocadoX = cellSize * 2;
         //avocadoY = cellSize * 4;
-        toastX = cellSize * 19;
-        toastY = cellSize * 4;
-        potX = cellSize * 19;
-        potY = cellSize * 9;
+        toastX = cellSize;
+        toastY = cellSize * 15;
+        potX = cellSize * 9;
+        potY = cellSize * 15;
 
 
         // Draw the labyrinth
