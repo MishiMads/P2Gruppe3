@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -13,6 +14,8 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.activity.result.contract.ActivityResultContracts;
 
 public class MiniGame3 extends View {
 
@@ -42,6 +45,8 @@ public class MiniGame3 extends View {
     int touchRow;
     float scaledWidth;
     float scaledHeight;
+
+    private Context context;
 
 
 
@@ -85,6 +90,7 @@ public class MiniGame3 extends View {
 
     public MiniGame3(Context context) {
         super(context);
+        this.context = context;
         Start();
     }
 
@@ -192,18 +198,21 @@ public class MiniGame3 extends View {
         // Check if the avocado bitmap overlaps with the pot or toast bitmaps
         if (avocadoRect.intersect(toastPosition)) {
             // Show an alert dialog
+            MainActivity.PlantPoints+= 2;
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-            builder.setMessage("The avocado was still edible! You can still plant the seed nonetheless.").setTitle("Congratulations");
+            builder.setMessage("The avocado was still edible! You can still plant the seed nonetheless.").setTitle("Congratulations, you have a total of: " + MainActivity.PlantPoints + " Points");
             builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // Restart the game
                     //resetGame();
+                StartCatalog();
                 }
             });
-            builder.setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("Go to front page", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
-                    // Quit the game
-                    ((Activity) getContext()).finish();
+                    // start main page
+                    //((Activity) getContext()).finish();
+                    StartFrontPage();
                 }
             });
             AlertDialog dialog = builder.create();
@@ -217,12 +226,14 @@ public class MiniGame3 extends View {
                 public void onClick(DialogInterface dialog, int id) {
                     // Restart the game
                     //resetGame();
+                    Startagain();
                 }
             });
-            builder.setNegativeButton("Continue", new DialogInterface.OnClickListener() {
+            builder.setNegativeButton("Go to Catalog", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
                     // Quit the game
-                    ((Activity) getContext()).finish();
+                    //((Activity) getContext()).finish();
+                    StartCatalog();
                 }
             });
             AlertDialog dialog = builder.create();
@@ -230,7 +241,18 @@ public class MiniGame3 extends View {
         }
     }
 
-
+    public void StartCatalog(){
+        Intent intent = new Intent(context, Catalog.class);
+        context.startActivity(intent);
+    }
+    public void Startagain(){
+        Intent intent = new Intent(context, Minigame3starterActivity.class);
+        context.startActivity(intent);
+    }
+    public void StartFrontPage(){
+        Intent intent = new Intent(context, MainActivity.class);
+        context.startActivity(intent);
+    }
 
     public boolean onTouchEvent(MotionEvent event) {
         if (event.getAction() == MotionEvent.ACTION_MOVE) {
