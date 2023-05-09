@@ -252,6 +252,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 3;
+                    //MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     frontPage.setVisibility(View.VISIBLE);
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
@@ -303,6 +304,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 3;
+                    //MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     Eggside();
                 }
@@ -360,6 +362,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints +=3;
+                    //MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
 
                     Meatside();
@@ -409,6 +412,7 @@ public class MiniGame1 extends AppCompatActivity {
         badMouth.setVisibility(View.VISIBLE);
         neutralMouth.setVisibility(View.INVISIBLE);
         happyMouth.setVisibility(View.INVISIBLE);
+        //MainActivity.BadNose.start();
     }
 
     public void GoodNose() {
@@ -416,6 +420,7 @@ public class MiniGame1 extends AppCompatActivity {
         badMouth.setVisibility(View.INVISIBLE);
         neutralMouth.setVisibility(View.INVISIBLE);
         happyMouth.setVisibility(View.VISIBLE);
+        //MainActivity.GoodNose.start();
     }
 
     public void NeutralNose() {
