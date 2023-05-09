@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.Random;
+import android.media.MediaPlayer;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -45,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
     public static TextView DisplayPoints;
 
-
+    private MediaPlayer Sound1;
+    private MediaPlayer Sound2;
+    private MediaPlayer Sound3;
+    private MediaPlayer Sound4;
+    private MediaPlayer Sound5;
 
 
 
@@ -70,7 +75,11 @@ public class MainActivity extends AppCompatActivity {
 
         Catalog = findViewById(R.id.CatalogButton);
 
-
+        Sound1 = MediaPlayer.create(this, R.raw.click1);
+        Sound2 = MediaPlayer.create(this, R.raw.click2);
+        Sound3 = MediaPlayer.create(this, R.raw.click3);
+        Sound4 = MediaPlayer.create(this, R.raw.click4);
+        Sound5 = MediaPlayer.create(this, R.raw.click5);
 
         DisplayPoints = findViewById(R.id.PlantPointsDisplay);
         DisplayPoints.setTextColor(R.color.black);
@@ -138,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Sound1.start();
                 Intent Minigame1= new Intent(view.getContext(), MiniGame1.class);
                 startActivity(Minigame1);
             }
@@ -145,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
         MG2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Sound2.start();
                 Intent Minigame2 = new Intent(view.getContext(), MiniGame2.class);
                 startActivity(Minigame2);
             }
@@ -152,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
         MG3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Sound3.start();
                 Intent intent = new Intent(view.getContext(), Minigame3starterActivity.class);
                 startActivity(intent);
             }
@@ -159,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
         Drag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Sound4.start();
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 int RanNumber = random.nextInt(3) +1;
                 if (PlantPoints >= 5){
@@ -192,6 +205,7 @@ public class MainActivity extends AppCompatActivity {
         Drag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Sound5.start();
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 if (PlantPoints >= 7){
