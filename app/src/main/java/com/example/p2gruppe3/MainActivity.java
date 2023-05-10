@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -19,6 +20,10 @@ import android.widget.TextView;
 
 import java.util.Random;
 import android.media.MediaPlayer;
+
+import nl.dionsegijn.konfetti.KonfettiView;
+import nl.dionsegijn.konfetti.models.Shape;
+import nl.dionsegijn.konfetti.models.Size;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -60,6 +65,27 @@ public class MainActivity extends AppCompatActivity {
     private TextView PotText3;
     private TextView PotText4;
     private TextView PotText5;
+    KonfettiView konfettiView;
+
+
+
+    public void confetti()
+    {
+        konfettiView.build()
+                .addColors(Color.YELLOW, Color.GREEN, Color.MAGENTA)
+                .setDirection(0.0, 359.0)
+                .setSpeed(10f, 30f)
+                .setFadeOutEnabled(true)
+                .setTimeToLive(2000L)
+                .addShapes(Shape.RECT, Shape.CIRCLE)
+                .addSizes(new Size(12, 5))
+                .setPosition(-50f, konfettiView.getWidth() + 50f, -50f, -50f)
+                .stream(700, 2000L);
+
+    }
+
+
+
 
 
 
@@ -104,6 +130,8 @@ public class MainActivity extends AppCompatActivity {
 
         Drawable Background = getResources().getDrawable(R.drawable.ellipse_26);
 
+        konfettiView = findViewById(R.id.konfetti_view);
+
         Random random = new Random();
         int RanNumber = random.nextInt(3) +1;
 
@@ -112,6 +140,10 @@ public class MainActivity extends AppCompatActivity {
         Drag3.setBackground(Background);
         Drag4.setBackground(Background);
         Drag5.setBackground(Background);
+
+
+
+
 
         Map.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -183,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -217,6 +250,9 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=3;
                     Drag1.setImageResource(R.drawable.frame);
+                    confetti();
+
+
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -254,6 +290,7 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=5;
                     Drag2.setImageResource(R.drawable.frame);
+                    confetti();
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -290,6 +327,7 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=7;
                     Drag3.setImageResource(R.drawable.frame);
+                    confetti();
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -326,6 +364,7 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=5;
                     Drag4.setImageResource(R.drawable.frame);
+                    confetti();
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
@@ -362,6 +401,7 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=10;
                     Drag5.setImageResource(R.drawable.frame);
+                    confetti();
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 

@@ -197,4 +197,9 @@
         app:layout_constraintStart_toEndOf="@+id/PlantPointsDisplay"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <nl.dionsegijn.konfetti.KonfettiView
+        android:id="@+id/konfetti_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
