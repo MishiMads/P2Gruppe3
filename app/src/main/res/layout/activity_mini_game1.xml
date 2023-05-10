@@ -20,11 +20,11 @@
         tools:visibility="invisible" />
 
     <ImageButton
-        android:id="@+id/Toast"
+        android:id="@+id/Gryde"
         android:layout_width="106dp"
         android:layout_height="116dp"
-        android:background="@null"
-        android:src="@drawable/toast"
+        android:background="@color/white"
+        android:src="@drawable/gryde"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.932"
@@ -108,7 +108,7 @@
         tools:visibility="invisible" />
 
     <ImageButton
-        android:id="@+id/goodEgg"
+        android:id="@+id/GoodPotato"
         android:layout_width="147dp"
         android:layout_height="143dp"
         android:backgroundTint="#FFFFFF"
@@ -118,21 +118,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.979"
-        app:srcCompat="@drawable/goodegg"
-        tools:visibility="invisible" />
-
-    <ImageButton
-        android:id="@+id/badEgg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#FFFFFF"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.973"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.955"
-        app:srcCompat="@drawable/badegg"
+        app:srcCompat="@drawable/good_potato"
         tools:visibility="invisible" />
 
 

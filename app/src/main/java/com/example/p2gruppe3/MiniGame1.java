@@ -8,7 +8,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
@@ -64,12 +63,8 @@ public class MiniGame1 extends AppCompatActivity {
 
         goodMilk = (ImageView) findViewById(R.id.goodMilk);
 
-        goodEggButton = (ImageButton) findViewById(R.id.goodEgg);
+        goodEggButton = (ImageButton) findViewById(R.id.GoodPotato);
         goodEggButton.setVisibility(View.INVISIBLE);
-
-
-        badEggButton = (ImageButton) findViewById(R.id.badEgg);
-        badEggButton.setVisibility(View.INVISIBLE);
 
         badMeatButton = (ImageButton) findViewById(R.id.badMeat);
         badMeatButton.setVisibility(View.INVISIBLE);
@@ -82,7 +77,7 @@ public class MiniGame1 extends AppCompatActivity {
         MilkGlass = (ImageButton) findViewById(R.id.GlassMilk);
         MilkGlass.setVisibility(View.INVISIBLE);
 
-        Bread = (ImageButton) findViewById(R.id.Toast);
+        Bread = (ImageButton) findViewById(R.id.Gryde);
         Bread.setVisibility(View.INVISIBLE);
 
         Trashcan2 = (ImageButton) findViewById(R.id.Trash2);
