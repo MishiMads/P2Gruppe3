@@ -10,11 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d75ae1-4ddc-4414-ad58-4ce2a4bd0c95" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/gryde.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/rotten_potato.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_mini_game1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_mini_game1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
