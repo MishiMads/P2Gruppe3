@@ -110,4 +110,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/points2"
+        android:layout_width="136dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="48dp"
+        android:background="@color/white"
+        android:text="Remove the mold from the cheese by clicking on the mold spots."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

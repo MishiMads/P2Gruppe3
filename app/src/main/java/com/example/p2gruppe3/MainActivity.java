@@ -46,12 +46,12 @@ public class MainActivity extends AppCompatActivity {
 
     public static TextView DisplayPoints;
 
-    /*private MediaPlayer ClickSound;
+    public static MediaPlayer ClickSound;
     public static MediaPlayer PointSound;
     public static MediaPlayer BadNose;
-    public static MediaPlayer GoodNose;*/
-
-
+    public static MediaPlayer GoodNose;
+    public static MediaPlayer Leafsound;
+    public static MediaPlayer MoldClick;
 
 
 
@@ -75,10 +75,12 @@ public class MainActivity extends AppCompatActivity {
 
         Catalog = findViewById(R.id.CatalogButton);
 
-        /*ClickSound = MediaPlayer.create(this, R.raw.click1);
-        PointSound = MediaPlayer.create(this, R.raw.points3);
-        BadNose = MediaPlayer.create(this, R.raw.badsound);
-        GoodNose = MediaPlayer.create(this,R.raw.goodsound1);*/
+        ClickSound = MediaPlayer.create(this, R.raw.click1);
+        PointSound = MediaPlayer.create(this, R.raw.point);
+        BadNose = MediaPlayer.create(this, R.raw.badsounddd);
+        GoodNose = MediaPlayer.create(this,R.raw.goodsound1);
+        Leafsound = MediaPlayer.create(this, R.raw.leaf);
+        MoldClick = MediaPlayer.create(this, R.raw.click3);
 
 
         DisplayPoints = findViewById(R.id.PlantPointsDisplay);
@@ -147,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         MG1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 Intent Minigame1= new Intent(view.getContext(), MiniGame1.class);
                 startActivity(Minigame1);
             }
@@ -155,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
         MG2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 Intent Minigame2 = new Intent(view.getContext(), MiniGame2.class);
                 startActivity(Minigame2);
             }
@@ -163,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         MG3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 Intent intent = new Intent(view.getContext(), Minigame3starterActivity.class);
                 startActivity(intent);
             }
@@ -171,11 +173,12 @@ public class MainActivity extends AppCompatActivity {
         Drag1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // ClickSound.start();
+                ClickSound.start();
                 DisplayPoints.setText("Your points: " + PlantPoints);
                 int RanNumber = random.nextInt(3) +1;
-                if (PlantPoints >= 5){
-                    PlantPoints -=5;
+                if (PlantPoints >= 3){
+                    Leafsound.start();
+                    PlantPoints -=3;
                     Drag1.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -187,12 +190,14 @@ public class MainActivity extends AppCompatActivity {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            ClickSound.start();
                             openRanMinigame(RanNumber);
                         }
                     });
@@ -205,11 +210,12 @@ public class MainActivity extends AppCompatActivity {
         Drag2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
-                if (PlantPoints >= 7){
-                    PlantPoints -=7;
+                if (PlantPoints >= 5){
+                    Leafsound.start();
+                    PlantPoints -=5;
                     Drag2.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -221,12 +227,14 @@ public class MainActivity extends AppCompatActivity {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            ClickSound.start();
                             openRanMinigame(RanNumber);
                         }
                     });
@@ -238,11 +246,12 @@ public class MainActivity extends AppCompatActivity {
         Drag3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
-                if (PlantPoints >= 10){
-                    PlantPoints -=10;
+                if (PlantPoints >= 7){
+                    Leafsound.start();
+                    PlantPoints -=7;
                     Drag3.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -254,12 +263,14 @@ public class MainActivity extends AppCompatActivity {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            ClickSound.start();
                             openRanMinigame(RanNumber);
                         }
                     });
@@ -271,11 +282,12 @@ public class MainActivity extends AppCompatActivity {
         Drag4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
-                if (PlantPoints >= 20){
-                    PlantPoints -=20;
+                if (PlantPoints >= 5){
+                    Leafsound.start();
+                    PlantPoints -=5;
                     Drag4.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -287,12 +299,14 @@ public class MainActivity extends AppCompatActivity {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            ClickSound.start();
                             openRanMinigame(RanNumber);
                         }
                     });
@@ -304,11 +318,12 @@ public class MainActivity extends AppCompatActivity {
         Drag5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //ClickSound.start();
+                ClickSound.start();
                 int RanNumber = random.nextInt(3) +1;
                 DisplayPoints.setText("Your points: " + PlantPoints);
-                if (PlantPoints >= 100){
-                    PlantPoints -=100;
+                if (PlantPoints >= 10){
+                    Leafsound.start();
+                    PlantPoints -=10;
                     Drag5.setImageResource(R.drawable.frame);
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
@@ -320,12 +335,14 @@ public class MainActivity extends AppCompatActivity {
                     builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to minigame", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            ClickSound.start();
                             openRanMinigame(RanNumber);
                         }
                     });
@@ -338,7 +355,7 @@ public class MainActivity extends AppCompatActivity {
         Catalog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //ClickSound.start();
+                ClickSound.start();
                 OpenCatalog();
             }
         });

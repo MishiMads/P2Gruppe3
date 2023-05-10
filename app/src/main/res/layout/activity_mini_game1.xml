@@ -175,7 +175,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.947"
-        app:srcCompat="@drawable/fluent_emoji_flat_glass_of_milk"
+        app:srcCompat="@drawable/empty_glass"
         tools:visibility="invisible" />
 
     <ImageButton
@@ -224,13 +224,26 @@
         android:id="@+id/Points"
         android:layout_width="143dp"
         android:layout_height="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="24dp"
         android:background="@color/white"
         android:text="TextView"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.228"
+        app:layout_constraintHorizontal_bias="0.142"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/points"
+        android:layout_width="162dp"
+        android:layout_height="119dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="68dp"
+        android:background="@color/white"
+        android:text="Drag the food item to the Nose, and click on the corresponding items in the lower left or right, based on the Noses reaction."
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 

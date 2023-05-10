@@ -102,21 +102,6 @@ public class MiniGame1 extends AppCompatActivity {
         Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
 
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
-
-        builder.setCancelable(true);
-        builder.setTitle("Minigame 1");
-        builder.setMessage("Drag the food item to the Nose, and click on the corresponding items in the lower left or right, based on the Noses reaction.");
-
-        builder.setNegativeButton("Start Minigame", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-
-
-        builder.show();
 
         goodMilk.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -219,6 +204,7 @@ public class MiniGame1 extends AppCompatActivity {
             frontPage.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MainActivity.ClickSound.start();
                     OpenFront();
                 }
             });
@@ -226,8 +212,8 @@ public class MiniGame1 extends AppCompatActivity {
             FryPan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MainActivity.ClickSound.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
-
                     builder.setCancelable(true);
                     builder.setTitle("Wrong");
                     builder.setMessage("You shouldn´t eat meat if it is green!");
@@ -235,12 +221,14 @@ public class MiniGame1 extends AppCompatActivity {
                     builder.setNegativeButton("try again", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.ClickSound.start();
                             OpenCatalog();
                         }
                     });
@@ -251,8 +239,8 @@ public class MiniGame1 extends AppCompatActivity {
             Trashcan3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.PlantPoints += 3;
-                    //MainActivity.PointSound.start();
+                    MainActivity.PlantPoints += 5;
+                    MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     frontPage.setVisibility(View.VISIBLE);
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
@@ -264,12 +252,14 @@ public class MiniGame1 extends AppCompatActivity {
                    builder.setNegativeButton("close", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to front page", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.ClickSound.start();
                             OpenFront();
                         }
                     });
@@ -303,8 +293,8 @@ public class MiniGame1 extends AppCompatActivity {
             Trashcan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.PlantPoints += 3;
-                    //MainActivity.PointSound.start();
+                    MainActivity.PlantPoints += 5;
+                    MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     Eggside();
                 }
@@ -312,6 +302,7 @@ public class MiniGame1 extends AppCompatActivity {
             MilkGlass.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MainActivity.ClickSound.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
                     builder.setCancelable(true);
@@ -321,12 +312,14 @@ public class MiniGame1 extends AppCompatActivity {
                     builder.setNegativeButton("try again", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.ClickSound.start();
                             OpenCatalog();
                         }
                     });
@@ -361,8 +354,8 @@ public class MiniGame1 extends AppCompatActivity {
             Bread.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.PlantPoints +=3;
-                    //MainActivity.PointSound.start();
+                    MainActivity.PlantPoints +=5;
+                    MainActivity.PointSound.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
 
                     Meatside();
@@ -372,6 +365,7 @@ public class MiniGame1 extends AppCompatActivity {
             Trashcan2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    MainActivity.ClickSound.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
                     builder.setCancelable(true);
@@ -381,12 +375,14 @@ public class MiniGame1 extends AppCompatActivity {
                     builder.setNegativeButton("try again", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialogInterface, int i) {
+                            MainActivity.ClickSound.start();
                             dialogInterface.cancel();
                         }
                     });
                     builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
+                            MainActivity.ClickSound.start();
                             OpenCatalog();
                         }
                     });
@@ -412,7 +408,7 @@ public class MiniGame1 extends AppCompatActivity {
         badMouth.setVisibility(View.VISIBLE);
         neutralMouth.setVisibility(View.INVISIBLE);
         happyMouth.setVisibility(View.INVISIBLE);
-        //MainActivity.BadNose.start();
+        MainActivity.BadNose.start();
     }
 
     public void GoodNose() {
@@ -420,7 +416,7 @@ public class MiniGame1 extends AppCompatActivity {
         badMouth.setVisibility(View.INVISIBLE);
         neutralMouth.setVisibility(View.INVISIBLE);
         happyMouth.setVisibility(View.VISIBLE);
-        //MainActivity.GoodNose.start();
+        MainActivity.GoodNose.start();
     }
 
     public void NeutralNose() {
