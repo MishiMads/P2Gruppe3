@@ -1,22 +1,24 @@
 package com.example.p2gruppe3;
 
+import androidx.annotation.DrawableRes;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
 import android.widget.TextView;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.Random;
+import android.media.MediaPlayer;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -56,9 +58,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView PotText3;
     private TextView PotText4;
     private TextView PotText5;
-
-
-
 
 
 
@@ -109,8 +108,6 @@ public class MainActivity extends AppCompatActivity {
         Drag3.setBackground(Background);
         Drag4.setBackground(Background);
         Drag5.setBackground(Background);
-
-
 
         Map.setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -211,8 +208,6 @@ public class MainActivity extends AppCompatActivity {
                     Leafsound.start();
                     PlantPoints -=3;
                     Drag1.setImageResource(R.drawable.frame);
-
-
                 }else {
                     AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
