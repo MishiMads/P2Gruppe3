@@ -10,10 +10,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78d75ae1-4ddc-4414-ad58-4ce2a4bd0c95" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/maps.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/p2gruppe3/MiniGame3.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +31,35 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="P2Gruppe3" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="P2Gruppe3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="P2Gruppe3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="P2Gruppe3" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="other" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>

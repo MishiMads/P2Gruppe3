@@ -213,7 +213,7 @@ public class MiniGame1 extends AppCompatActivity {
             FryPan.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.ClickSound.start();
+                    MainActivity.Badclick.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
                     builder.setCancelable(true);
                     builder.setTitle("Wrong");
@@ -241,7 +241,7 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 5;
-                    MainActivity.PointSound.start();
+                    MainActivity.Yay.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
                     frontPage.setVisibility(View.VISIBLE);
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
@@ -295,15 +295,16 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints += 5;
-                    MainActivity.PointSound.start();
+                    MainActivity.Yay.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
+                    Inbetween();
                     Eggside();
                 }
             });
             MilkGlass.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.ClickSound.start();
+                    MainActivity.Badclick.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
                     builder.setCancelable(true);
@@ -356,9 +357,9 @@ public class MiniGame1 extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     MainActivity.PlantPoints +=5;
-                    MainActivity.PointSound.start();
+                    MainActivity.Yay.start();
                     Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
-
+                    Inbetween();
                     Meatside();
                 }
             });
@@ -366,7 +367,7 @@ public class MiniGame1 extends AppCompatActivity {
             Trashcan2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    MainActivity.ClickSound.start();
+                    MainActivity.Badclick.start();
                     AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame1.this);
 
                     builder.setCancelable(true);
@@ -444,6 +445,25 @@ public class MiniGame1 extends AppCompatActivity {
     public void OpenFront(){
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void Inbetween(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setCancelable(true);
+        builder.setTitle("Good Job");
+        builder.setMessage("Ready for the next food item?");
+
+        builder.setNegativeButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.cancel();
+                MainActivity.ClickSound.start();
+            }
+        });
+
+
+        builder.show();
     }
 
 

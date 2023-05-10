@@ -199,6 +199,7 @@ public class MiniGame3 extends View {
         if (avocadoRect.intersect(toastPosition)) {
             // Show an alert dialog
             MainActivity.PlantPoints+= 6;
+            MainActivity.Yay.start();
             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
             builder.setMessage("The avocado was still edible! You can still plant the seed nonetheless.").setTitle("Congratulations, you have a total of: " + MainActivity.PlantPoints + " Points");
             builder.setPositiveButton("Go to catalog", new DialogInterface.OnClickListener() {

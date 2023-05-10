@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     public static MediaPlayer GoodNose;
     public static MediaPlayer Leafsound;
     public static MediaPlayer MoldClick;
+    public static MediaPlayer Badclick;
+    public static MediaPlayer Yay;
 
     private TextView PotText1;
     private TextView PotText2;
@@ -93,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
         GoodNose = MediaPlayer.create(this,R.raw.goodsound1);
         Leafsound = MediaPlayer.create(this, R.raw.leaf);
         MoldClick = MediaPlayer.create(this, R.raw.click3);
+        Badclick = MediaPlayer.create(this,R.raw.badclick);
+        Yay = MediaPlayer.create(this, R.raw.yay);
 
 
         DisplayPoints = findViewById(R.id.PlantPointsDisplay);

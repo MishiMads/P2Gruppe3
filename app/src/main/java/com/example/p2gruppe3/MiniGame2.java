@@ -60,7 +60,7 @@ public class MiniGame2 extends AppCompatActivity {
             public void onClick(View v) {
                 numberOfMoldRemoved++;
                 MainActivity.PlantPoints+=3;
-                MainActivity.MoldClick.start();
+                MainActivity.Yay.start();
 
                 v.setVisibility(View.INVISIBLE);
                 messageText.setText("You have removed " + numberOfMoldRemoved + " mold!");
