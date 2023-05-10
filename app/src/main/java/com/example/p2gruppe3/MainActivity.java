@@ -134,31 +134,36 @@ public class MainActivity extends AppCompatActivity {
 
                         Map.setX(Mapsx);
                         Map.setY(Mapsy);
-                        Drag1.setX(Mapsx + 100);
-                        Drag1.setY(Mapsy + 1300);
-                        Drag2.setX(Mapsx + 1500);
-                        Drag2.setY(Mapsy + 2500);
-                        Drag3.setX(Mapsx + 5000);
-                        Drag3.setY(Mapsy + 1600);
-                        Drag4.setX(Mapsx + 4490);
-                        Drag4.setY(Mapsy + 750);
-                        Drag5.setX(Mapsx + 3500);
-                        Drag5.setY(Mapsy + 1800);
 
-                        PotText1.setX(Mapsx + 10);
-                        PotText1.setY(Mapsy + 1500);
+                        Drag1.setX(Mapsx + 2600);
+                        Drag1.setY(Mapsy + 1200);
+
+                        Drag2.setX(Mapsx + 2000);
+                        Drag2.setY(Mapsy + 260);
+
+                        Drag3.setX(Mapsx + 1300);
+                        Drag3.setY(Mapsy + 1550);
+
+                        Drag4.setX(Mapsx + 890);
+                        Drag4.setY(Mapsy + 210);
+
+                        Drag5.setX(Mapsx + 550);
+                        Drag5.setY(Mapsy + 950);
+
+                        PotText1.setX(Mapsx + 2460);
+                        PotText1.setY(Mapsy + 1400);
                         PotText1.setText("Buy this pot for 3 Points");
-                        PotText2.setX(Mapsx + 1370);
-                        PotText2.setY(Mapsy + 2700);
+                        PotText2.setX(Mapsx + 1860);
+                        PotText2.setY(Mapsy + 460);
                         PotText2.setText("Buy this pot for 5 Points");
-                        PotText3.setX(Mapsx + 4870);
-                        PotText3.setY(Mapsy + 1800);
+                        PotText3.setX(Mapsx + 1160);
+                        PotText3.setY(Mapsy + 1750);
                         PotText3.setText("Buy this pot for 7 Points");
-                        PotText4.setX(Mapsx + 4350);
-                        PotText4.setY(Mapsy + 950);
+                        PotText4.setX(Mapsx + 740);
+                        PotText4.setY(Mapsy + 410);
                         PotText4.setText("Buy this pot for 5 Points");
-                        PotText5.setX(Mapsx + 3360);
-                        PotText5.setY(Mapsy + 2000);
+                        PotText5.setX(Mapsx + 400);
+                        PotText5.setY(Mapsy + 1150);
                         PotText5.setText("Buy this pot for 10 Points");
 
                         DisplayPoints.setText("Your points: " + PlantPoints);

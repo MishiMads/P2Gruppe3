@@ -9,11 +9,12 @@
 
     <ImageView
         android:id="@+id/MapImage"
-        android:layout_width="2048dp"
-        android:layout_height="1360dp"
+        android:layout_width="1024dp"
+        android:layout_height="680dp"
         android:src="@drawable/landscape_new_zealand_s_shape"
-        tools:layout_editor_absoluteX="-352dp"
-        tools:layout_editor_absoluteY="-342dp" />
+        app:srcCompat="@drawable/landscape_new_zealand_s_shape"
+        tools:layout_editor_absoluteX="-185dp"
+        tools:layout_editor_absoluteY="-135dp" />
 
     <ImageButton
         android:id="@+id/Pot"
