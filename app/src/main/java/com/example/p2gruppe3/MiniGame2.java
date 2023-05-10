@@ -47,20 +47,6 @@ public class MiniGame2 extends AppCompatActivity {
 
         //Sets the layout of this activity to be the activity_mini_game2.xml XML file.
         setContentView(R.layout.activity_mini_game2);
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(MiniGame2.this);
-
-        builder.setCancelable(true);
-        builder.setTitle("Minigame 2");
-        builder.setMessage("Remove the mold from the cheese by clicking on the mold spots.");
-
-        builder.setNegativeButton("Start Minigame", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.cancel();
-            }
-        });
-        builder.show();
         //Creates an OnClickListener object assigned to the variable moldButtonOnClickListener
         //from the OnClickListener interface in the View class.
             //An interface is a set of abstract methods, methods without implementation.
@@ -73,7 +59,9 @@ public class MiniGame2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 numberOfMoldRemoved++;
-                MainActivity.PlantPoints++;
+                MainActivity.PlantPoints+=3;
+                MainActivity.MoldClick.start();
+
                 v.setVisibility(View.INVISIBLE);
                 messageText.setText("You have removed " + numberOfMoldRemoved + " mold!");
                 Pointsdisplay.setText("Your points: " +MainActivity.PlantPoints);
@@ -120,6 +108,7 @@ public class MiniGame2 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                MainActivity.ClickSound.start();
                 //When the button is pressed, it checks if the user has removed 4 molds,
                 //which is kept track of by using the numberOfMoldRemoved integer variable.
                 //If numberOfMoldRemoved is equals 4, then it runs the block of code that
