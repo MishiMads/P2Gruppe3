@@ -136,16 +136,16 @@ public class MiniGame3 extends View {
 
         // Draw the labyrinth
         Paint wallPaint = new Paint();
-        wallPaint.setColor(Color.LTGRAY);
+        wallPaint.setColor(Color.parseColor("#617837"));
         wallPaint.setStyle(Paint.Style.FILL);
         wallPaint.setStrokeWidth(cellSize / 5);
 
         Paint pathPaint = new Paint();
-        pathPaint.setColor(Color.WHITE);
+        pathPaint.setColor(Color.parseColor("#DEDBBE"));
         pathPaint.setStyle(Paint.Style.FILL);
 
         Paint redPaint = new Paint();
-        redPaint.setColor(Color.RED);
+        redPaint.setColor(Color.GREEN);
         redPaint.setStyle(Paint.Style.FILL);
 
 
