@@ -103,6 +103,7 @@ public class MiniGame1 extends AppCompatActivity {
 
 
 
+
         goodMilk.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent motionevent) {
